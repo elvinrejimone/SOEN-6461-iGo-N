@@ -6,3 +6,6 @@ https://docs.google.com/document/d/1Z_dS0Imvqk9UYd7YkCjXyKQVPO-UuZD1rT0NrAQp1rQ/
 
 Roles and Responsibilties Tracker :
 https://docs.google.com/document/d/1j38J-lBybRq45DPbRcwjgABt5lwJG8n9n4gw6vJoOlY/edit?usp=sharing
+
+OverLeaf Document Deliverable 1 
+https://www.overleaf.com/project/63d07c1fca448b4b7ed42460
