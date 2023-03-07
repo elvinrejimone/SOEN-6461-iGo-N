@@ -1,0 +1,1149 @@
+
+%\begin{enumerate*}[itemjoin=\newline] creates a typical numbered list, but does not start with a linebreak.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-1 \\
+         \hline
+         Name               & Read Instructions \\
+         \hline
+         Pre-Condition(s)   & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter is at the terminal.
+         \end{enumerate*} \\
+         \hline
+         Post-Condition(s)  & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Instructions for that specific page is displayed 
+         \end{enumerate*} \\
+         \hline
+         Trigger            & Commuter clicks the help option on any screen \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Once the help button is clicked, it shows instructions based on the page it is in.
+             % \item The commuter can then choose to request on-site booking support from an on-site support agent.
+         \end{enumerate*} \\
+         \hline
+         Exceptional Flow(s)& None\\
+         \hline
+         Related Actor(s)   & Commuter \\
+         \hline
+         Related Use Case(s)& Seek Assistance\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Read Instructions}
+    \label{tab:UC_ReadInstructions}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-2 \\
+         \hline
+         Name               & Seek Assistance \\
+         \hline
+         Pre-Condition(s)   & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter is in the Read Instructions Page.
+         \end{enumerate*} \\
+         \hline
+         Post-Condition(s)  & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item A signal is sent to the terminal to a support agent to come and assist the commuter.
+         \end{enumerate*} \\
+         \hline
+         Trigger            & Commuter clicks the seek Assistance button \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item As soon as the seek assistance button in the instructions page is clicked, the terminal support agent is notified to assist the commuter
+         \end{enumerate*} \\
+         \hline
+         Exceptional Flow(s)& None\\
+         \hline
+         Related Actor(s)   & Commuter, Support Agent \\
+         \hline
+         Related Use Case(s)& Read Instructions\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Seek Assistance}
+    \label{tab:UC_SeekAssistance}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-3 \\
+         \hline
+         Name               & Choose Language \\
+         \hline
+         Pre-Condition(s)   & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter is at the terminal.
+         \end{enumerate*} \\
+         \hline
+         Post-Condition(s)  & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Interface language is set to the Commuter's preference.
+             \item Commuter is able to understand the language of the interface.
+         \end{enumerate*} \\
+         \hline
+         Trigger            & Commuter clicks the change Language button \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item The terminal shows language options for English and French.
+             \item The Commuter selects his preferred language.
+         \end{enumerate*} \\
+         \hline
+         Exceptional Flow(s)& 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter aborts choosing a language.
+         \end{enumerate*} \\
+         \hline
+         Related Actor(s)   & Commuter \\
+         \hline
+         Related Use Case(s)& None\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Choose Language}
+    \label{tab:UC_ChooseLanguage}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-4 \\
+         \hline
+         Name               & Purchase Montreal Ferry Ticket \\
+         \hline
+         Pre-Condition(s)   & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter Selected the language
+         \end{enumerate*} \\
+         \hline
+         Post-Condition(s)  & 
+         \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is in possession of an Montreal ferry ticket. 
+         \end{enumerate*} \\
+         \hline
+         Trigger            & Commuter selects the Montreal Ferry ticket choice. \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+           \item Commuter picks a ticket type according to UC-8.
+            \item Commuter picks a quantity of tickets according to UC-14.
+            \item Commuter confirms his purchase according to UC-19.
+            \item Commuter pays the ticket by his preferred method.
+            \item Commuter receives his ticket.
+         \end{enumerate*} \\
+         \hline
+         Exceptional Flow(s)& 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Anytime, the Commuter aborts the purchase.
+         \end{enumerate*} \\
+         \hline
+         Related Actor(s)   & Commuter \\
+         \hline
+         Related Use Case(s)& Select Ticket Type\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Purchase Montreal Ferry Ticket}
+    \label{tab:UC_PurchaseMontrealFerryTicket}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-5 \\
+         \hline
+         Name               & Purchase Inter-City Ferry Ticket \\
+         \hline
+         Pre-Condition(s)   & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter is at the terminal.
+         \end{enumerate*} \\
+         \hline
+         Post-Condition(s)  & 
+         \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is in possession of an inter-city ferry ticket. 
+         \end{enumerate*} \\
+         \hline
+         Trigger            & Commuter selects the intercity ticket choice. \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter picks a destination according to UC-6.
+            \item The Terminal displays the ferry schedules according to UC-18.
+            \item Commuter picks a ferry from a schedule according to UC-7.
+            \item The Terminal displays ticket choices according to UC-9.
+            \item Commuter picks a quantity of tickets according to UC-14.
+            \item Commuter chooses which seats to reserve with the ticket according to UC-10.
+            \item Commuter confirms his purchase according to UC-19.
+            \item Commuter pays the ticket by his preferred method.
+            \item Commuter receives his ticket.
+         \end{enumerate*} \\
+         \hline
+         Exceptional Flow(s)& 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Anytime, the Commuter aborts the purchase.
+         \end{enumerate*} \\
+         \hline
+         Related Actor(s)   & Commuter, iGo System \\
+         \hline
+         Related Use Case(s)& UC-6, UC-7, UC-9, UC-10, UC-11, UC-15, UC-22, UC-23, UC-25\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Purchase Inter-City Ferry Ticket}
+    \label{tab:UC_PurchaseInterCityFerryTicket}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-6 \\
+         \hline
+         Name               & Choose Destination \\
+         \hline
+         Pre-Condition(s)   & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter is at the terminal.
+             \item Commuter is ordering a ticket.
+         \end{enumerate*} \\
+         \hline
+         Post-Condition(s)  & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter's ticket's destination is determined.
+         \end{enumerate*} \\
+         \hline
+         Trigger            & Commuter is prompted to choose a destination by the terminal. \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item The Commuter selects his intended destination
+         \end{enumerate*} \\
+         \hline
+         Exceptional Flow(s)& 
+         \begin{enumerate*}[itemjoin=\newline]
+             \item Commuter aborts choosing a destination.
+         \end{enumerate*} \\
+         \hline
+         Related Actor(s)   & Commuter \\
+         \hline
+         Related Use Case(s)& UC-4, UC-5\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Choose Destination}
+    \label{tab:UC_ChooseDestination}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-7 \\
+        \hline
+        Name               & Pick from Ferry Schedule \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is at the terminal.
+            \item Commuter is ordering a ticket.
+            \item Commuter has selected a destination.
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's ticket's schedule is determined.
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter is prompted to choose a ferry from a list of schedules by the terminal. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal displays ferries by their schedules for the given destination according to UC-18.
+            \item The Commuter selects his preferred schedule for the ticket.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter aborts choosing a schedule.
+        \end{enumerate*} \\
+        \hline
+        Related Actor(s)   & Commuter \\
+        \hline
+        Related Use Case(s)& UC-4, UC-5, UC-18\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Pick from Ferry Schedule}
+    \label{tab:UC_PickFromFerrySchedule}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-8 \\
+        \hline
+        Name               & Select Ticket Type \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is at the terminal.
+            \item Commuter is ordering a Montreal ferry ticket.
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's Montreal ferry ticket's type is determined
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter is prompted to choose a ticket type by the terminal. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal displays details of the Commuter's ticket choices according to UC-9.
+            \item The Commuter selects his preferred ticket type.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter aborts choosing a ticket type.
+        \end{enumerate*} \\
+        \hline
+        Related Actor(s)   & Commuter \\
+        \hline
+        Related Use Case(s)& UC-4, UC-9\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Select Ticket Type}
+    \label{tab:UC_SelectTicketType}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-9 \\
+        \hline
+        Name               & Provide Ticket Details and Pricing \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is at the terminal.
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is knowledgeable on tickets and their prices.
+        \end{enumerate*} \\
+        \hline
+        Trigger            & The terminal wants to ensure the Commuter knows about tickets. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item If the Commuter is currently ordering a Montreal ferry ticket, the terminal displays descriptions and pricing of the different options he has.
+            \item Otherwise, the terminal displays the pricing of intercity tickets.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& None\\
+        \hline
+        Related Actor(s)   & iGo System \\
+        \hline
+        Related Use Case(s)& UC-4, UC-5\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Provide Ticket Details and Pricing}
+    \label{tab:UC_ProvideTicketDetailsAndPricing}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-10 \\
+        \hline
+        Name               & Choose Seats \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is at the terminal.
+            \item Commuter is ordering an intercity ferry ticket.
+            \item Commuter has chosen a ferry.
+            \item Commuter has chosen his number of tickets.
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's preferred seats are determined. 
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter is prompted to choose his seats by the terminal. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal offers the Commuter a selection of seats.
+            \item The Commuter selects his preferred seats, as many as he has tickets ordered.
+            \item OR, the Commuter allows iGo system to determine his seats in his place.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter aborts choosing a ticket type.
+        \end{enumerate*} \\
+        \hline
+        Related Actor(s)   & Commuter, iGo System \\
+        \hline
+        Related Use Case(s)& UC-5, UC-14\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Choose Seats}
+    \label{tab:UC_ChooseSeats}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-11 \\
+        \hline
+        Name               & Pay By Cash \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has confirmed the purchase and selected the payment option
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter gets payment confirmed notification and gets his ticket
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Payment option to pay be cash is selected \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Once the payment by cash is selected, the commuter enters the cash into the machine (UC-13)
+            \item The machine processes the payment and returns the cash difference(UC-24)
+            \item After this the commuter recieves his ticket
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& Commuter didnt enter the cash or cancelled the session(UC-27)\\
+        \hline
+        Related Actor(s)   & iGo System \\
+        \hline
+        Related Use Case(s)& UC-4, UC-5\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Pay By Cash}
+    \label{tab:UC_PayByCash}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-12 \\
+        \hline
+        Name               & Verify Cash Payment \\
+        \hline
+        Pre-Condition(s)   & None \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's excess cash is reimbursed.
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter handed cash to the terminal. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal calculates the difference between expected and actual payment by the Commuter.
+            \item The terminal reimburses the Commuter for his excess cash payment.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter pays too little, then ask for more cash.
+            \item Commuter cancels payment, then reimburse total cash inputted by the Commuter.
+        \end{enumerate*} \\
+        \hline
+        Related Actor(s)   & Commuter\\
+        \hline
+        Related Use Case(s)& UC-4, UC-5, UC-13\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Verify Cash Payment}
+    \label{tab:UC_VerifyCashPayment}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-13 \\
+        \hline
+        Name               & Insert Cash \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has selected the pay by cash option
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The cash is calculated, difference is returned and the ticket is printed
+        \end{enumerate*} \\
+        \hline
+        Trigger            & option to pay be cash is selected and user enters the cash \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Once the payment by cash is selected, the commuter enters the cash into the machine
+            \item The machine processes the payment and returns the cash difference(UC-24)
+            \item After this the commuter receives his ticket(UC-22, UC-23)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& Commuter didn't enter the cash or cancelled the session(UC-27)\\
+        \hline
+        Related Actor(s)   & Commuter\\
+        \hline
+        Related Use Case(s)& UC-11, UC-12,UC-24\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Insert Cash}
+    \label{tab:UC_InsertCash}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-14 \\
+        \hline
+        Name               & Select Quantity \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has selected the type of ticket
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item omce quantity is selected, it goes to the payment confirmation stage
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Type of ticket is selected \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Once Type of ticket is selected, the quantity page appears
+            \item Once the quantity is selected, the system provides the confirmation of booking to continue to payment(UC-19)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& Commuter cancelles the session(UC-27)\\
+        \hline
+        Related Actor(s)   & Commuter\\
+        \hline
+        Related Use Case(s)& UC-8, UC-19,UC-20\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Select Quantity}
+    \label{tab:UC_Select Quantity Cash}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-15 \\
+        \hline
+        Name               & Pay By Card \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has confirmed the purchase and selected the payment option
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter gets payment confirmed notification and gets his ticket
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Payment option to pay by Card is selected \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Once the payment by Card is selected, the commuter inserts the card into the machine (UC-16)
+            \item The machine requests the pin and authenticates the pin(UC-17)
+            \item After this the commuter receives Confirmation
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& Commuter didnt insert the card or cancelled the session(UC-27)\\
+        \hline
+        Related Actor(s)   & iGo System \\
+        \hline
+        Related Use Case(s)&  UC-19, UC-16\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Pay By Card}
+    \label{tab:UC_PayByCard}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-16 \\
+        \hline
+        Name               & Insert Card \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has confirmed the purchase and selected the pay by Card option
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter gets payment confirmed notification and gets his ticket
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Payment option to pay by Card is selected \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The commuter inserts the card into the machine (UC-16)
+            \item The machine requests the pin and authenticates the pin(UC-17)
+            \item After this the commuter receives Confirmation
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& Commuter didnt insert the card or cancelled the session(UC-27)\\
+        \hline
+        Related Actor(s)   & Commuter \\
+        \hline
+        Related Use Case(s)&  UC-19, UC-16\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Insert Card}
+    \label{tab:UC_InsertCard}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-17 \\
+        \hline
+        Name               & Authenticate by Pin \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has inserted the Bank Card and System requests Pin
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter gets payment confirmed notification and gets his ticket
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Payment option to pay by Card is selected \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The machine requests the pin and authenticates the pin(UC-17)
+            \item After this the commuter receives Confirmation from the System
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter didnt enter the pin
+            \item The pin is Incorrect
+            \item Commuter cancelled the session(UC-27)
+        \end{enumerate*} \\ or \\
+        \hline
+        Related Actor(s)   & Commuter \\
+        \hline
+        Related Use Case(s)&  UC-19, UC-16\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Authenticate by Pin}
+    \label{tab:UC_AuthenticateByPin}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-18 \\
+        \hline
+        Name               & Provide Ferry Timings and Availability \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has clicked the Intercity ferry Ticket option and selected the destination
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter selects ticket and continues to select quantity(UC-14)
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter selects a destination in the intercity ferry option \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+           \item Commuter picks a destination according to UC-6.
+            \item The TVM displays the ferry schedules.
+            \item Commuter picks a ferry from a schedule according to UC-7.
+            \item The Terminal displays ticket choices according to UC-9.
+            \item Commuter picks a quantity of tickets according to UC-14.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s) & Commuter cancelled the session(UC-27) \\
+        \hline
+        System   &  iGo TVM \\
+        \hline
+        Related Use Case(s)&  UC-6, UC-9, UC-14\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Provide Ferry Timings and Availability}
+    \label{tab:UC_ProvideFerryTimingsAvailability}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-19 \\
+        \hline
+        Name               & Confirm Purchase \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has selected the ticket type and quantity 
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter selects payment type and proceeds to payment
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter selects the quantity (UC-14)\\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The Terminal displays ticket choices according to UC-9.
+            \item Commuter picks a quantity of tickets according to UC-14.
+            \item Commuter is prompted to confirm the purchase 
+            \item Commuter proceeds to payment methods(UC-11, UC-15)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s) & Commuter cancelled the session(UC-27) \\
+        \hline
+         Related Actor(s)   &  Commuter \\
+        \hline
+        Related Use Case(s)&  UC-9, UC-14, UC-11, UC-15\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Confirm Purchase}
+    \label{tab:UC_ConfirmPurchase}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-20 \\
+        \hline
+        Name               & Make a Payment \\
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has selected the ticket type and quantity 
+            \item Confirm the Purchase(UC-19)
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter selects payment type(Cash or Card) and proceeds to payment
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter confirms the Purchase (UC-19)\\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter is prompted to confirm the purchase 
+            \item Commuter proceeds to payment methods(Cash: UC-11, Card : UC-15)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s) & Commuter cancelled the session(UC-27) \\
+        \hline
+         Related Actor(s)   &  Commuter, Bank \\
+        \hline
+        Related Use Case(s)& UC-18, UC-11, UC-15\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Make a Payment}
+    \label{tab:UC_MakePayment}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-21 \\
+        \hline
+        Name               &  Show Payment Error \\
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has Confirmed purchase (UC-19)
+            \item Commuter has reached the Make a Payment Page and discarded or made an incorrect payment 
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The Transaction gets terminated
+        \end{enumerate*} \\
+        \hline
+        Trigger(s)            & 
+         \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter Either ends the session(UC-27)
+            \item System Rejects the Payment(Card: Bank, Cash : System)
+        \end{enumerate*} \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter proceeds to payment methods(Cash: UC-11, Card: UC-15)
+            \item System rejects payment 
+            \item System Displays Payment Error
+        \end{enumerate*} \\
+        \hline
+         Related Actor(s)/System   &  Commuter, Bank, iGo TVM \\
+        \hline
+        Related Use Case(s)& UC-20, UC-11, UC-15\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Show Payment Error}
+    \label{tab:UC_PaymentError}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        System & iGo\\
+        \hline
+        Identifier & UC-22 \\
+        \hline
+        Name & Display Ticket \\
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has made the payment
+            \item Payment has been confirmed
+            \item In-case of cash payment, balance is returned
+            \item In-case of card payment, Card is removed
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Ticket is printed
+        \end{enumerate*} \\
+        \hline
+        Trigger            & System Confirms payment(UC-25) \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item System Comfirms the Payment(UC-25) 
+             \item In-case of cash payment, balance is returned
+            \item In-case of card payment, Card is removed
+            \item System Displays the ticket and Prints the ticket(UC-23)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s) & Payment error occurs \\
+        \hline
+         Related Actor(s)/System   &  iGo TVM \\
+        \hline
+        Related Use Case(s) & UC-25, UC-23\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Display Ticket}
+    \label{tab:UC_DisplayTicket}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        System & iGo\\
+        \hline
+        Identifier & UC-23 \\
+        \hline
+        Name & Print Ticket \\
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has made the payment
+            \item Payment has been confirmed
+            \item Ticket has been Displayed(UC-22)
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Ticket is printed and session is ended once user collects the ticket
+        \end{enumerate*} \\
+        \hline
+        Trigger            & System Confirms payment(UC-25) and Displays ticket(UC-22) \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item System Comfirms the Payment(UC-25) 
+             \item In-case of cash payment, balance is returned
+            \item In-case of card payment, Card is removed
+            \item System Displays the ticket and Prints the ticket(UC-23)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s) & Payment error occurs \\
+        \hline
+         Related Actor(s)/System   &  iGo TVM \\
+        \hline
+        Related Use Case(s) & UC-25, UC-22\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Print Ticket}
+    \label{tab:UC_PrintTicket}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-24 \\
+        \hline
+        Name               & Return Cash Difference \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter has paid by cash 
+            \item System Calculates the cash
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The cash difference is returned and the ticket is displayed and printed
+        \end{enumerate*} \\
+        \hline
+        Trigger            & System has calculated the cash entered and has cash difference \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The commuter enters the cash into the machine
+            \item The machine processes the payment and returns the cash difference(UC-24)
+            \item After this the commuter receives his ticket after display(UC-22, UC-23)
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& There is no cash balance\\
+        \hline
+        Related Actor(s)/System(s)   & iGo TVM\\
+        \hline
+        Related Use Case(s) & UC-25\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Return Cash Difference}
+    \label{tab:UC_returnCashDifference}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-25 \\
+        \hline
+        Name               & Confirm Payment\\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's is undergoing a card payment
+            \item Commuter's bank card is authenticated.
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The bank receives the Commuter's payment on iGo's behalf.
+        \end{enumerate*} \\
+        \hline
+        Trigger            & The Commuter approves of the transfer in funds from his card to iGo. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The bank approves the transfer in funds between the Commuter's bank card and iGo system.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The card does not have sufficient funds, then terminate transaction.
+        \end{enumerate*} \\
+        \hline
+        Related Actor(s)   & iGo System \\
+        \hline
+        Related Use Case(s)& UC-20\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Confirm Payment}
+    \label{tab:UC_ConfirmPayment}
+\end{table}
+
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-26 \\
+        \hline
+        Name               & Return Card \\
+        \hline
+        Pre-Condition(s)   & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's bank card is inserted into the terminal.
+        \end{enumerate*} \\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's bank card is returned.
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter card payment process terminates. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal returns the commuter's bank card.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& None \\
+        \hline
+        Related Actor(s)   & iGo System \\
+        \hline
+        Related Use Case(s)& UC-15\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for Return Card}
+    \label{tab:UC_ReturnCard}
+\end{table}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+        \hline
+        System             & iGo\\
+        \hline
+        Identifier         & UC-27 \\
+        \hline
+        Name               & End session \\
+        \hline
+        Pre-Condition(s)   & None\\
+        \hline
+        Post-Condition(s)  & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter's session with the terminal is terminated.
+        \end{enumerate*} \\
+        \hline
+        Trigger            & Commuter prompts to end the session with the terminal, OR the Commuter completes his business flow. \\
+        \hline
+        Normal Flow        & 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal displays a farewell message according to UC-28.
+            \item the terminal starts another context for the next Commuter.
+        \end{enumerate*} \\
+        \hline
+        Exceptional Flow(s)& 
+        \begin{enumerate*}[itemjoin=\newline]
+            \item Commuter aborts choosing a ticket type.
+        \end{enumerate*} \\
+        \hline
+        Related Actor(s)   & Commuter, iGo System \\
+        \hline
+        Related Use Case(s)& UC-28\\
+        \hline
+    \end{tabular}
+    \caption{Use Case for End Session}
+    \label{tab:UC_EndSession}
+\end{table}
+\clearpage
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|p{11cm}|}
+         \hline
+         System             & iGo\\
+         \hline
+         Identifier         & UC-28 \\
+         \hline
+         Name               & Display Session End Message \\
+         \hline
+         Pre-Condition(s)   & None \\
+         \hline
+         Post-Condition(s)  & None\\
+         \hline
+         Trigger            & Commuter's session is being terminated \\
+         \hline
+         Normal Flow        & 
+         \begin{enumerate*}[itemjoin=\newline]
+            \item The terminal displays a polite farewell message to the Commuter. 
+         \end{enumerate*} \\
+         \hline
+         Related Actor(s)   & iGo System \\
+         \hline
+         Related Use Case(s)& None\\
+         \hline
+    \end{tabular}
+    \caption{Use Case for Display Session End Message}
+    \label{tab:UC_DisplaySessionEndMessage}
+\end{table}

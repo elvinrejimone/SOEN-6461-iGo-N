@@ -1,0 +1,542 @@
+\documentclass[letterpaper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{wrapfig}
+
+%for fancy quotes
+\usepackage{epigraph}
+
+% allow hyperlinks
+\usepackage{hyperref}
+\usepackage{caption}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+    pdftitle={SOEN 6461 Winter 2023 D1 Team N},
+    pdfpagemode=FullScreen,
+    }
+\urlstyle{same}
+\usepackage[inline]{enumitem}
+
+\usepackage{authblk}
+
+\begin{document}
+
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+%	LOGO SECTION
+\center % Center everything on the page
+\includegraphics[width=14cm]{concordia-logo.jpg} % Include a department/university logo - this will require the graphicx package
+\vspace{\baselineskip}
+\vspace{0.8cm}
+
+
+%	HEADING SECTIONS
+
+\oddsidemargin=20pt
+\setstretch{1.30} \textsc{\LARGE SOEN 6461 
+\\ SOFTWARE DESIGN METHODOLOGIES} \\[1.4cm]
+\textsc{\Large Concordia University}\\[0.5cm]
+\textsc{\large Department of Computer Science and Software Engineering}\\[0.5cm]
+
+
+%	TITLE SECTION
+
+\title{\Large iGo Ticket Vending Machine - Deliverable 1}
+\makeatletter
+\HRule \vspace{0.4cm}
+{ \huge \bfseries \@title} \\ % Title of your document
+\vspace{0.2cm} 
+\HRule \vspace{1.1cm}
+\makeatother
+
+%	AUTHOR SECTION
+\Large \emph{Authors (Team N):}\\
+\item Swapnil Kamleshkumar Rana \hspace{0.8cm} Kevin Rao \hspace{0.8cm} Himanshu Rathod \item Elvin Rejimone \hspace{0.8cm} Sadath Roshan
+
+\vspace {1.8cm}
+%	DATE SECTION
+ {\large March 6, 2023}
+
+\end{titlepage}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Problem 1 : Project Description}
+\epigraph{Land was created to provide a place for boats to visit. }{\textit{Brooks Atkinson}}
+\vspace{\baselineskip}
+View the source code of the report \href{https://www.overleaf.com/read/jdwsnqmxksty}{here [read-only]}.\\
+Roles and responsibilities were distributed amongst the team members, they are viewable \href{https://docs.google.com/document/d/1j38J-lBybRq45DPbRcwjgABt5lwJG8n9n4gw6vJoOlY/}{here}.
+\section{Ticket Vending Machine}
+
+A Ticket Vending Machine (TVM), also known as a ticket machine or a ticketing kiosk, 
+is an automated, self-service, vending machine that produces paper or electronic tickets, or recharges a stored-value card or online wallet for a multitude of purposes like Transportation, Mobile recharge or theme park entrances. 
+
+\section{iGo : Project Description}
+The purpose of the project is to create a Ticket Vending Machine we refer to as iGo for a public transport service legally permitted in Canada. The transportation service selected for iGo is the Montréal Ferry System(Navette Maritimes) that operates in ports along the Saint Lawrence River and along the river to ports in a few nearby cities mentioned later in the document. The Ticket Vending Machines (iGo) localted in all ports of service is intended to be the only ticketing system to provide commuters with the tickets to use the Ferry Services.
+
+\subsection{Details of the Transportation Service Considered : Montréal Ferry System}
+The Montréal Ferry System(Navette Maritimes) is a public Ferry service that services multiple locations, including Montréal's Old Port, Parc-Jean Dreupue, and Longueuil. The Service also provides intercity ferry-travel to Ottawa, Quebec City, Toronto, and Kingston. The iGo software will be designed to be maintainable, secure, environmentally sustainable, and usable. It will be built using a combination of agile and rigid methodologies and will involve both individual and communal work. The iGo ticket vending machine will provide a convenient and efficient way for passengers to purchase their travel ticket.
+
+\subsubsection{Port Stations}
+\begin{itemize}
+    \item \textbf{Montréal Stations }
+    \begin{itemize}
+        \item Montréal Old Port 
+        \item Longueuil - Departure from Longueuil Marina
+        \item Parc Jean-Drepeau - Stewart Museum
+    \end{itemize}
+    \item \textbf{Inter-city Stations}
+    \begin{itemize}
+        \item Montréal Old port
+        \item Toronto
+        \item Ottawa
+        \item Quebec City
+        \item Kingston
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Service Details}  
+There will be multiple Ticket Vending Machines at the every port given in the above list. 
+There are two types of ferry services: -
+\begin{itemize}
+    \item Short-distance Ferry (Longueuil, Parc Jean Drapeau, Old Port) (Within Montréal)
+    \item Long-distance Ferry (Toronto, Ottawa, Quebec City, Kingston,  (Outside Montréal)
+\end{itemize}
+\subsubsection{Types of Tickets}
+\begin{itemize}
+    \item Single-use tickets - \$5.50 (consume one per direction)
+    \item Return trip tickets - \$7 (consume one for two directions)
+    \item Day pass tickets - \$10 (consume one per day)
+    \item Recreational ticket - \$20 (ferry makes a circle, starts and end at same station)
+    \item Ticket option for car.( People sitting in the car do not need a personal ticket). 
+\begin{itemize}
+    \item Cars with up to 5 seats - \$15
+    \item Cars with 7/8  seats -  \$20
+\end{itemize}
+    \item Long-Distance Ticket (Price depends on the destination) 
+\end{itemize}
+
+\subsection{Scope of the Project: iGo Ticket Vending Machine}
+The scope of this project is to design and develop the iGo Ticket Vending Machine for the above mentioned Montréal Ferry Service. The scope includes full ticket booking(for Montréal Ferry and Inter-city ferry) operation in the TVM , Payment initiation, payment confirmation and the physical ticket printing. It does not cover the operations performed by the Server, Bank or any other system not physically in the Vending Machine. 
+\subsubsection{Operations required to be performed by iGo TVM}
+\begin{itemize}
+    \item Ferry Ticketing
+     \begin{itemize}
+        \item Montréal Ferry ticket
+        \item Inter-city Ferry ticket
+    \end{itemize}
+    \item Ticket Confirmation
+    \item Payment 
+    \begin{itemize}
+        \item Payment by Cash
+        \item Payment by Card (Debit/Credit/Bank Cards)
+    \end{itemize}
+    \item Print Ticket
+    \item On-site Booking Assistance for Commuters 
+\end{itemize}
+\vspace{\baselineskip}
+
+In the following sections we will be discussing the problem domain with package diagrams, mind-mapping for the project, several interviews with potential users to obtain valuable insights and conclusions, create a use-case model and several activity diagrams to aid in the development of the iGo Ticket Vending Machine,
+
+\chapter{Problem 2}
+Refer to figure \ref{fig:problemDomain} and figure \ref{fig:problemPackage} for the problem domain model diagram and its package diagram. The figures were created using lecture slides by Pankaj Kamthan\cite{DomainModelDiagramming} as a guide. The classes, their attributes, and the relationship between these will be defined subsequently. Their definitions will be organized by the package the class is categorized in. View the figures \href{https://drive.google.com/file/d/1l209HYuvMnJnniDuLFu2vUxGI3H7XldU/view?usp=sharing}{here}.
+
+\begin{figure}[ht] %h means try putting the figure here and t means try putting it at the top of a subsequent page. ht mean try h first, then t.
+    \centering
+    % \includesvg{ProblemDomainDiagram/Problem Domain Model-Package Diagram of Problem Domain Model.svg} %svg has problems rendering, for whatever reason.
+    \includegraphics[width=\textwidth]{ProblemDomainDiagram/Problem Domain Model-Package Diagram of Problem Domain Model.png}
+    \caption{Package Diagram of Problem Domain Model}
+    \label{fig:problemPackage}
+\end{figure}
+\begin{figure}[ht]
+    \centering
+    % \includesvg[width=\textwidth]{ProblemDomainDiagram/Problem Domain Model-Problemin Model.svg} %svg has problems rendering, for whatever reason.
+    \includegraphics[width=\textwidth]{ProblemDomainDiagram/Problem Domain Model-Problem Domain Model.png}
+    \caption{Diagram of Problem Domain Model}
+    \label{fig:problemDomain}
+\end{figure}
+\clearpage  %print all figures.
+\section{Ferry System package}
+\subsection{Class Descriptions}
+\begin{itemize}
+    \item Location class represents physical locations for which a ferry will travel between. Its attributes are the common name of the physical location and its longitude and latitude coordinates to uniquely identify the space where it can be found. Locations are either within or outside Montréal.
+    \item Route class is the ternary relationship between a from-Location, a to-Location and a Ferry. The Route starts from the from-Location, and ends at the to-Location. The Route will be aboard the Ferry from one Location to another (or the same) Location. About its attributes, a route travels in a direction (West or East), with a planned startTime for a planned duration on a particular date. At least one of the Locations must be within Montréal.
+    \item Ferry class represents the physical ferry that will be travelled on. About its attributes, it has a maximum capacity of passengers. 
+    \item Short-distance Ferry is a concrete Ferry that can only travel for Routes that are between Locations within Montréal.
+    \item Long-distance Ferry is a concrete Ferry that can only travel for Routes that are between one Location within Montréal and one Location outside Montréal.
+\end{itemize}
+
+\subsection{Relationship Multiplicity Justifications}
+\begin{itemize}
+    \item {[Between Location and Route]} A Location may serve as a from-/to-Location to multiple Routes or to no Routes, but a Route must only have one from-Location and one to-Location.
+    \item {[Between Ferry and Route]} A Route must be conducted aboard one Ferry. A Ferry may be used for multiple or no Routes.
+\end{itemize}
+
+\section{Ticketing System package}
+\subsection{Class Descriptions}
+The classes will be further partitioned by the roles they occupy.
+\subsubsection{Ticket Kinds}
+\begin{itemize}
+    \item Ticket class allows permission to board a Route’s Ferry. Its attribute is the price in Canadian cents (ints are more precise in handling currencies with decimals than floats) associated with purchasing the Ticket. There is the option to board a Ferry with a vehicle.
+    \item Single Ticket is a concrete Ticket that allows passage along a set of Routes in the same direction starting from the Location it has been dispensed from. Its attribute is the direction of Routes this Ticket allows to board. It only allows to board Routes aboard a Short-distance Ferry, and does not allow boarding Routes whose to-/from-Locations are the same..
+    \item Return Ticket is a concrete Ticket that allows passage along a set of Routes in the same direction, followed by another set of Routes in the opposite direction. In practice, this should allow a commuter to travel in one direction, then later come back to his initial location with only this Ticket. It only allows to board Routes aboard a Short-distance Ferry, and does not allow boarding Routes whose to-/from-Locations are the same.
+    \item Day Pass Ticket is a concrete Ticket that allows passage along a set of Routes on one day. Its attribute is the day all Routes can be boarded with this Ticket. It only allows to board Routes aboard a Short-distance Ferry, and does not allow boarding Routes whose to-/from-Locations are the same.
+    \item Recreational Ticket is a concrete Ticket that allows passage on a single Route whose to-/from-Locations are the same. It only allows to board Routes aboard a Short-distance Ferry.
+    \item InterCity Ticket is a concrete Ticket that allows passages on a single Route aboard a Long-distance Ferry.
+\end{itemize}
+
+\subsubsection{Ticket Decorator}
+\begin{itemize}
+    \item Car Option class lets a Ticket allow the transport of a Vehicle along its Route, except for Inter-City Tickets. This option also allows passage for as many commuters as there are seats to the vehicle. A Car Option must have an associated Vehicle Record to be valid. Having a Car Option modifies the price of the Ticket.
+    \item Vehicle Record class represents the bureaucratic paperwork as proof for a vehicle to be assigned to a particular Car Option. Its attribute is the number of seats the vehicle is documented to support.
+\end{itemize}
+
+\subsubsection{Ticket Dispenser}
+\begin{itemize}
+    \item Ticket Vending Machine class represents the iGo TVM to be installed at a Location to dispense Tickets.
+\end{itemize}
+
+\subsection{Relationship Multiplicity Justifications}
+\subsubsection{Inter-package}
+\begin{itemize}
+    \item {[Between Ticket and Route]} A Ticket always allows passage to at least one Route, but may allow for many more. A Route may be wanted by many Tickets, or none at all. However, a Route has a maximum allocatable amount of Tickets equal to its Ferry’s capacity. This capacity is determined on a ferry-by-ferry basis, thus the “*” notation does not properly reflect the actual multiplicity (there’s a note on the diagram pointing to this multiplicity’s constraint).
+    \item {[Between Ticket Vending Machine and Location]} A Ticket Vending Machine is installed at a Location. A Location must have at least one Ticket Vending Machine installed there. A Ticket Vending Machine can only be installed at one particular Location at any given time. In fact, a Location has a Ticket Vending Machine, and the Ticket Vending Machine can meaningfully exist outside any particular Location, hence an aggregation relationship.
+\end{itemize}
+
+\subsubsection{Intra-package}
+\begin{itemize}
+    \item {[Between Ticket and Car Option]} A Ticket can optionally combine with a Car Option. A Car Option on its own is meaningless outside of coupling it with a Ticket, thus it is a composition relationship. A Ticket may have one or no Car Option. A Car Option only exists to connect with a Ticket, and a single Ticket only. (Getting multiple Tickets+Car Option with the same vehicle will generate multiple Vehicle Records. There’s no uniqueness constraint on Vehicle Records.)
+    \item {[Between Car Option and Vehicle Record]} A Car Option needs documentation of a properly owned vehicle to be valid. This documentation is represented by the Vehicle Record. A Car Option requires one Vehicle Record. A Vehicle Record cannot be used for multiple Car Options (max one), and is only ever prompted into existence by the need from a Car Option (there are at least as many Car Option as there are Vehicle Records), thus not choosing zero as a possibility is not a problem. (Concisely, there is a one-to-one mapping between Car Options and Vehicle Records.)
+    \item {[Between Ticket Vending Machine and Ticket]} A Ticket Vending Machine dispenses Tickets. A Ticket can only ever and must be dispensed from a single Ticket Vending Machine. A Ticket Vending Machine may dispense many Tickets or none at all.
+\end{itemize}
+
+% \newpage
+\section{Transactional System package}
+\subsection{Class Descriptions}
+\begin{itemize}
+    \item Transaction class is the relationship between Ticket Vending Machine and Tickets. About its attributes, every Transaction has a cost to purchase all the Tickets within and the date of the Transaction. Every Transaction has its details on  a receipt.
+    \item Cash Transaction is a concrete Transaction that is paid in full with cash. Untraceable.
+    \item Bank Card Transaction is a concrete Transaction that is paid in full with a Bank Card. Traceable with a Bank Card Record.
+    \item Bank Card Record represents the documentation of a valid Bank Card for a Bank Card Transaction. Its attribute is the bank card’s number (it’s a long because ints can’t show 16 figures).
+    \item Receipt class records the detail of a Transaction in textual form. Its attribute is details of a Transaction as a String.
+\end{itemize}
+
+\subsection{Relationship Multiplicity Justifications}
+\begin{itemize}
+    \item {[Between Transaction and Receipt]} A Transaction is proven with a Receipt. A receipt records one Transaction. A transaction must have one receipt.
+    \item {[Between Bank Card Transaction and Bank Card Record]} A Bank Card Transaction needs documentation of a valid bank card to be valid. A Bank Card Transaction must need one Bank Card Record. A bank card is identifiable uniquely by its bank card number, thus a single Bank Card Record is able to validate multiple Bank Card Transactions.
+\end{itemize}
+
+\chapter{Problem 3}
+\section{Mind Map for Context of Use}
+The figure \ref{fig:MindMap} was created using lecture slides by Pankaj Kamthan\cite{MindMap} as a guide.
+\begin{figure}[h]
+    \centering
+    \includegraphics[height=0.52\textheight]{Interviews/MindMap/Mind Map.png}
+    \caption{A mind map used for context and iGO ticket vending machine interview planning.}
+    \label{fig:MindMap}
+\end{figure}
+\clearpage
+
+\section{Interviews:}
+Interviews were conducted on individuals we thought would reflect our customer base. The following are our succinct conclusions from each interview conducted. The first interview acts as a pilot interview. For the recorded transcript of each interview, see Appendix \ref{sec:Appendix_Interviews}.\\
+Some conclusions made use of user experience principles \cite{UIgoals} as part of theory from SOEN 357.
+\subsection{Interview 1}
+Some of our customers may be averse to technology, and be more materialistic, preferring physical tokens and interactions over virtual ones. A skeuomorphic user interface may please customers that share similar values as this interviewee better by being grounded closer to traditional solutions, rather than the more abstract and minimalist flat design. 
+
+However, it's also a reality that skeuomorphism takes more effort to design around and still be visually pleasant than flat design by virtue of the level in detail. 
+
+\subsection{Interview 2}
+The interface should be simple and minimalistic and require few interactions on the Commuter's part. An interface in flat design will reduce the amount of noise and make it clear what are interactable elements. There can be a little bit more emphasis on the option for choosing recreational ticket, since there's some demand for it. Purchases in advance further than a day may not be needed. Some of our customers may be inclined to technology, preferring payments through mobile apps and keeping transaction records/receipts viewable electronically. 
+Some usability goals our interface should respect:
+\begin{itemize}
+    \item Learnability: The interface should be simple and visible enough to be easily and quickly learned how to operate. Immediate feedback would help reinforce. Virtual affordance and unambiguous design can help the Commuter intuitively know what and which purposes serve what and which actions.
+    \item Efficiency usability goal: Tasks should be completable by the Commuter in as few actions as possible.
+\end{itemize}
+
+\subsection{Interview 3}
+In conclusion, the interviewee shared positive feedback about the Greater Montreal Ferry System, highlighting the accessibility of the service and convenient location of terminals. They expressed interest in the recreational ticket option and appreciated the convenience of QR code ticket entry. They emphasized the importance of friendly and helpful customer service, a variety of ticket options, and year-round service availability. These salient features can provide insight for improving the overall customer experience and satisfaction with the ferry/cruise service.
+
+\newpage
+\subsection{Interview 4}
+Based on the interview, the following can be concluded. The interviewee thinks that a TVM for public transportation should have features such as route information, variety of ticket options, contactless payment option, and real-time updates of the transport schedule. They believe that vending machines are an modern alternative to the traditional standing in queue for purchasing a ticket system. The interviewee also prefers a vending machine that offers both cash and card payment modes and also a variety of ticket options (e.g. single-use, day pass, or monthly pass). Additionally, they believe that security measures such as security cameras and anti-theft alarms should be included for ensuring security of both commuters and the TVM. Overall, the interviewee believes that a dynamic vending machine that can be used for multiple services would be preferable, and having a clear and easy-to-understand pricing structure for tickets is important.
+
+\section{Conclusion}
+The interviews conducted for the design of the iGo ticket vending machine provided valuable insights into the needs and preferences of commuters. By understanding the commuter's perspective, the iGo TVM can be designed to be more user-friendly and efficient, making the ticket purchasing process a more enjoyable experience for commuters.
+\vspace{\baselineskip}
+
+One key finding from the interviews was the importance of clear and concise instructions. Commuters expressed frustration when the instructions were difficult to understand or unclear. As a result, the design team made sure to prioritize the clarity of the instructions and ensured fewer steps to purchase a ticket from the start. Additionally, the design team discovered that having a way to call on-site support agents to provide assistance when needed was a valuable feature for commuters. This led to the inclusion of a "seek assistance" use case in the design.
+\vspace{\baselineskip}
+
+Another important insight gained from the interviews was the importance of multiple language options. As Montreal is a diverse city, many commuters have a first language other than English or French. Therefore, including multiple language options was seen as an essential feature for the iGo TVM.
+\vspace{\baselineskip}
+
+Furthermore, the design team learned that providing a variety of payment options was important. While some commuters preferred to pay by cash, others preferred to pay using their contact-less credit or debit card. As a result, the design team included use cases for both payment options in the design.
+\vspace{\baselineskip}
+
+In conclusion, the interviews conducted for the design of the iGo ticket vending machine provided valuable insights that helped inform the design process. By prioritizing clear instructions, including support agents for assistance, offering multiple language options, and providing a variety of payment options, the iGo TVM was designed to be a user-friendly and efficient ticket purchasing experience for commuters.
+
+\chapter{Problem 4 : Use Case Model}
+\section{Introduction}
+ A use case model is a high-level view of the functionalities that a system provides to its users. It is a way to understand the requirements of the system and how users will interact with it. By creating a use case model, the developers and stakeholders of the iGo TVM can gain a better understanding of the system requirements and how the system will be used. This can help to identify potential issues or improvements before the system is implemented, ultimately leading to a more efficient and effective system.
+
+ \section{Use case Model}
+The iGo TVM Use Case diagram is a visual representation of the various interactions between the Commuter and the system during the process of purchasing a ferry ticket. The diagram shows how the Commuter can choose their desired destination, select the type of ticket, choose seats, and make a payment using either cash or a card. The iGo Ticketing Server and Bank actors are involved in processing the payments, while the Support Agent actor is available to provide assistance if needed.
+
+This use case diagram was created using Visual Paradigm, a software development tool that enables users to create visual representations of system architectures and designs. 
+The following subsections describe the Actors, abstract use case packages and the use cases given in the use case diagram:
+
+\subsubsection{System and Actors}
+\begin{itemize}
+    \item Commuter: the one using our system and our primary intended recipient.
+    \item iGo Ticketing Server: our system that primarily supports the operations of the Commuter.
+    \item Bank: an established monetary funds handler. Card payments will be processed by this actor.
+    \item Support Agent: an iGo associate, who will be able to assist a Commuter in operating iGo's TVM when asked. 
+\end{itemize}
+
+\subsection{Use Case Summaries}
+\begin{enumerate}[label=UC-\arabic*]
+    \item Read Instructions: The Commuter can read the instructions provided by the system to understand how to use the iGo TVM Ticketing process.
+    \item Seek Assistance: The Commuter can seek assistance from the Support Agent on-site if they encounter any issues with the system.
+    \item Choose Language: The Commuter can choose the language they prefer for the system's interface.
+     \item Purchase Montreal Ferry Ticket: This use case helps the commuter initiate the process of booking a ticket for the Montreal ferry.
+    \item Purchase Inter-City Ferry Ticket: The Commuter can initiate the process of purchase a ticket for an inter-city ferry travel.
+    \item Choose Destination: The Commuter can choose their destination.
+    \item Pick from Ferry Schedule: The Commuter can pick a ferry schedule.
+    \item Select Ticket Type: The Commuter can select the type of ticket they want to purchase.
+    \item Provide Ticket Details and Pricing: The system provides the Commuter with the details and pricing for the selected ticket.
+    \item Choose Seats: The Commuter can choose the seats they prefer.
+    \item Pay by Cash: The Commuter can choose to pay for their ticket using cash.
+    \item Verify Cash Payment: The system verifies the cash payment made by the Commuter.
+    \item Insert Cash: The Commuter can insert the cash they want to use for payment.
+    \item Select Quantity: The Commuter can select the quantity of tickets they want to purchase.
+    \item Pay By Card: The Commuter can choose to pay for their ticket using a card.
+    \item Insert Card: The Commuter can insert their card for payment.
+    \item Authenticate by PIN: The Commuter can authenticate their card payment using a PIN.
+    \item Provide Ferry Timings and Availability: The system provides the Commuter with information on ferry timings and availability.
+    \item Confirm Purchase: The Commuter can confirm their ticket purchase.
+    \item Make a Payment: The Commuter can make a payment for their ticket.
+    \item Show Payment Error: The system displays an error message if there is an issue with the payment.
+    \item Display Ticket: The system displays the purchased ticket.
+    \item Print Ticket: The Commuter can print their ticket.
+    \item Return Cash Difference: The system returns any cash difference to the Commuter.
+    \item Confirm Payment: The system confirms the payment made by the Commuter.
+    \item Return Card: The system returns the Commuter's card after payment.
+     \item End Session: The Commuter can end the current session with the system.
+    \item Display Session End Message: The system displays a message when a session is about to end.
+\end{enumerate}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{UseCaseDiagrams/iGousecase.png}
+    \caption{Use Case Diagram for iGo}
+    \label{fig:UseCaseDiagram}
+\end{figure}
+
+\subsubsection{Use Case Categories from the use case diagram :}
+The figures were created using lecture slides by Pankaj Kamthan\cite{UseCaseDiagramming} as a guide.
+The use cases in Figure \ref{fig:UseCaseDiagram} are color-coded into 4 categories:
+\begin{enumerate}
+    \item Blue : Use cases that directly interact with the primary actor(Commuter) like selecting a destination, choosing seats, and paying for a ticket, whether by cash or card. These use cases describe the actions taken by the commuter when using the iGo TVM system.
+    \item Grey : Use Cases that imply operations performed by the iGo TVM that interacts with the above use cases. Examples of these are displaying ferry schedules, Display Ticket and Print Ticket
+    \item Green : Transaction Use cases - These use cases are involved with the payment systems in the iGo TVM like Make a Payment, Pay by Cash, Pay by Card and Confirm Payment
+    \item Red :  This represents an error notification by the iGo TVM system. In this case it is used in the Show Payment Error use case.
+\end{enumerate}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{UseCaseDiagrams/Package Diagram of Use Cases.png}
+    \caption{Package Diagram of Use Cases}
+    \label{fig:UseCasePackage}
+\end{figure}
+
+\section{Use Case Packages}
+The package diagram in figure \ref{fig:UseCasePackage} for the iGo TVM has divided the use cases into three distinct top-level packages: 
+\begin{enumerate}
+\item Ticket Ordering : The first package is called Ticket Ordering and contains use cases that describe the process of ordering a ticket from the vending machine. These use cases include selecting a destination, picking from ferry schedules, selecting ticket type, choosing seats, and displaying and printing tickets. 
+There are 2 sub-packages in this Package : 
+\begin{enumerate}
+    \item Montreal Ticket ordering : use cases pertaining to only Montreal ferry Booking
+    \item Intercity Ticket ordering : use cases pertaining to only Intercity ferry Booking
+\end{enumerate}
+
+\item Transactional : The second package is called Transactional and includes all the use cases related to payment processing. These use cases include making a payment, paying by cash or card, verifying cash payment, inserting cash, inserting a card for payment, authenticating the card payment with a PIN, returning cash difference, confirming payment, and returning the commuter's card after payment.
+There are 2 sub-packages in this package 
+\begin{enumerate}
+    \item Cash Transaction : use cases pertaining to cash based transactions
+    \item Card Transaction : use cases pertaining to bank card(credit/debit and contact-less) based transactions
+\end{enumerate}
+
+\item Assistance : The third package is called Assistance, and it provides use cases related to supporting commuters who encounter issues with the system. These use cases include reading instructions and seeking assistance from support agents.
+
+By dividing the use cases into these three packages, the diagram helps to simplify the understanding of the iGo ticket vending machine system by showing how the different use cases are related to each other and how they interact with the commuter and the vending machine. It also highlights the importance of the payment processing system and the need for assistance to ensure a seamless experience for the commuter.
+\end{enumerate}
+
+\section{Use Case Definitions}
+\input{useCases}
+
+\section{Conclusion}
+In conclusion, the use cases identified in this project provide a comprehensive overview of the functionalities and features of the iGo TVM system. Through the use of the use case diagram, we were able to categorize and organize the use cases into different packages, making it easier to understand the different interactions between the commuter and the system. The interviews conducted with potential users provided valuable insights into their needs and expectations, which were then incorporated into the use cases to ensure that the iGo TVM system meets the needs of its users. Overall, the use case section of this report serves as a guide for the development and implementation of the iGo TVM system, and will assist in ensuring that the final product is both user-friendly and efficient.
+
+\chapter{Problem 5}
+Refer to figure \ref{fig:ActivityDiagram_Cash},  \ref{fig:ActivityDiagram_Card}, \ref{fig:ActivityDiagram_Cancel},  \ref{fig:ActivityDiagram_Montreal}, and figure \ref{fig:ActivityDiagram_Intercity} for the activity diagrams corresponding to flow of different use-cases for the primary actor 'Commuter' in iGo.
+
+\section{Use Case Model - Temporal Relationship}
+iGo is a software system that requires a comprehensive use case model to ensure that all its functionalities are properly defined and understood. To achieve this, we create a visual representation of a system or process, which shows the sequence of activities involved, decision points, and possible outcomes. A UML Activity Diagram can be used to depict these temporal relationships between use cases. This section explores five different UML Activity Diagrams, that can be constructed to depict the flow of activities in iGo, between the Commuter, the iGo Ticket Vending Machine System and the Bank, during the process of ticket purchasing.
+
+\subsection{Use Cases used}
+'Choose Language', 'Purchase Montreal Ferry ticket', 'Provide Ticket Details and Pricing', 'Confirm Purchase', 'Select Ticket Type','Purchase Intercity Ferry Ticket', 'Choose Destination', 'Provide Ferry Timings and Availability', 'Pick from Ferry Schedules', 'Provide Ticket Details and Pricing', 'Select Quantity', 'Choose Seats', 'Confirm Purchase', 'Pay By Cash', 'Pay By Card', 'Insert Cash', 'Insert Card', 'Authenticate by PIN', 'Verify Cash Payment', 'Return Cash Difference', 'Confirm Payment' 'View Ticket', 'Print Ticket', 'Return Card', 'End Session'.
+
+\section{Activity Diagrams}
+\subsection{Pay by Cash \emph{(Figure \ref{fig:ActivityDiagram_Cash})}}
+This activity diagram shows how a commuter purchases an Intercity Ferry ticket using the iGo TVM System's {\bf Pay By Cash} payment method. After choosing a language, the commuter selects the ferry's destination, timing, quantity, and seats. Once confirmed, the commuter inserts cash, and the system verifies and calculates any excess amount, which is returned to the commuter. Finally, the commuter views the ticket, that the system prints or sends via email, concluding the session.
+\vspace{\baselineskip}
+ 
+ \begin{figure}[ht]
+ \centering
+    \includegraphics[width=\textwidth, height=0.95\textheight, keepaspectratio]{ActivityDiagrams/AD - 3.png}
+    \caption{Activity Diagram for Cash Payment}
+    \label{fig:ActivityDiagram_Cash}
+\end{figure}
+\clearpage
+
+ \subsection{Pay by Card \emph{(Figure \ref{fig:ActivityDiagram_Card})}}
+This activity diagram illustrates the process of purchasing a Montreal Ferry ticket using the iGo TVM System's {\bf Pay By Card} payment method. The process starts with the commuter selecting a language and choosing to purchase a ticket for the Montreal ferry. The system displays the available ticket types and their prices, and the commuter selects a ticket. After confirmation, the commuter inserts their debit/credit card and verifies their identity with a PIN. The bank then verifies the payment information and approves or declines the payment. Once the transaction is complete, the card is returned, and the commuter can choose to view the ticket, which the system can print or send via email to conclude the session.
+\vspace{\baselineskip}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.7\textheight, keepaspectratio]{ActivityDiagrams/AD - 4.png}
+    \caption{Activity Diagram for Card Payment}
+    \label{fig:ActivityDiagram_Card}
+\end{figure}
+\clearpage
+
+ \subsection{Cancel Booking Session \emph{(Figure \ref{fig:ActivityDiagram_Cancel})}}
+The activity diagram depicts the activity flow for the cancellation of the ticket booking session before actual purchase. A commuter chooses the preferred language, and tries to purchase an Intercity ferry ticket by choosing destination, time, quantity, and seat. But then {\bf Ends Session} abruptly, before moving to the payment section. In activity flow occurs when the user decides not to purchase a ticket.
+\vspace{\baselineskip}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.73\textheight, keepaspectratio]{ActivityDiagrams/AD - 5.png}
+    \caption{Activity Diagram for Cancellation before Payment}
+    \label{fig:ActivityDiagram_Cancel}
+\end{figure}
+\clearpage
+
+\subsection{Purchase Montréal Ferry Ticket \emph{(Figure \ref{fig:ActivityDiagram_Montreal})}}
+The activity diagram depicts the activity flow of {\bf Montréal Ferry ticket} purchase process. The commuter chooses the preferred language, and then selects the ticket type from the ticket details \& prices displayed by the iGO TVM System. Then after confirmation, the commuter completes the payment by either cash or card mode. Upon successful payment, the commuter views and receives a ticket physically or digitally based on their choice. 
+\vspace{\baselineskip}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth, height=0.73\textheight, keepaspectratio]{ActivityDiagrams/AD - 1.png}
+    \caption{Activity Diagram for Montréal Ferry Ticketing}
+    \label{fig:ActivityDiagram_Montreal}
+\end{figure}
+\clearpage
+
+ \subsection{Purchase Intercity Ferry Ticket \emph{(Figure \ref{fig:ActivityDiagram_Intercity})}}
+The activity diagram depicts the activity flow of {\bf Intercity Ferry ticket} purchase process. A commuter chooses a preferred language, and then selects the destination city for the travel, the ferry time from a schedule displayed by the iGO TVM System. The commuter also selects the ticket quantity and seats before confirmation. The commuter then completes the payment by either cash or card. Upon successful payment, a commuter views and receives a ticket physically or digitally.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,
+    height=0.735
+    \textheight, keepaspectratio]{ActivityDiagrams/AD - 2.png}
+    \caption{Activity Diagram for Intercity Ferry Ticketing}
+    \label{fig:ActivityDiagram_Intercity}
+\end{figure}
+\clearpage
+
+
+% \chapter{References}      %\begin{bibliography} creates its own page already.
+\begin{thebibliography}{9}
+\bibitem{TicketMachine}     %refer to this with \cite{TicketMachine}
+Ticket machine. (2023, March 2). In Wikipedia.\\
+\url{https://en.wikipedia.org/wiki/Ticket\_machine}.
+
+\bibitem{ActivityDiagram}
+Activity Diagram. (2023, March 5). In Wikipedia.\\
+\url{https://en.wikipedia.org/wiki/Activity\_diagram}.
+
+\bibitem{UIgoals}
+Kersten M., (2021, January 25). \textit{4.Usability goals, UX design principles and factors} [PDF slides], Computer Science and Software Engineering, Concordia University.
+
+\bibitem{DomainModelDiagramming}
+Kamthan P., (2023, March 6). \textit{Introduction to Domain Modeling} [PDF], Computer Science and Software Engineering, Concordia University. \url{http://users.encs.concordia.ca/~kamthan/courses/soen-6461/domain_modeling_introduction.pdf}
+
+\bibitem{UseCaseDiagramming}
+Kamthan P., (2023, March 6). \textit{Introduction to Use Case Modeling} [PDF], Computer Science and Software Engineering, Concordia University. \url{http://users.encs.concordia.ca/~kamthan/courses/soen-6461/use_case_modeling_introduction.pdf}
+
+\bibitem{MindMap}
+Kamthan P. \textit{BRAINSTORMING AND MIND MAPPING} [PDF], Computer Science and Software Engineering, Concordia University. \url{https://users.encs.concordia.ca/~kamthan/courses/soen-6461/brainstorming_mind_mapping.pdf}
+
+\bibitem{The Easy Guide to UML Activity Diagrams}
+The Easy Guide to UML Activity Diagrams (2022, November 29)
+\url{https://creately.com/guides/activity-diagram-tutorial/}
+
+\bibitem{Use Case Diagram Relationships}
+Use Case Diagram Relationships Explained (2022, December 13)
+\url{https://creately.com/blog/diagrams/use-case-diagram-relationships/}
+
+\bibitem{ROLE OF USE CASE DIAGRAM IN S/W DEVELOPMENT}
+ROLE OF USE CASE DIAGRAM IN SOFTWARE DEVELOPMENT (2014, January)
+% \url{https://www.researchgate.net/publication/322991847_role_of_use_case_diagram_in_software_development}
+\href{https://www.researchgate.net/publication/322991847_role_of_use_case_diagram_in_software_development}{https://www.researchgate.net/publication/322991847\_role\_of\_use\_case\_diagram\_in\_software\\
+\_development}      %circumvent warning
+
+\bibitem{Formal Analysis Of Use Case Diagrams}
+Formal Analysis Of Use Case Diagrams (2010, January)
+\url{https://www.researchgate.net/publication/50365823_Formal_Analysis_Of_Use_Case_Diagrams}
+
+\bibitem{Activity Diagram in UML: Symbol, Components & Example}
+Activity Diagram in UML: Symbol, Components \& Example (2023, March 5). In guru99.\\
+\url{https://www.guru99.com/uml-activity-diagram.html}.
+
+\bibitem{Navettes Maritimes}
+Navettes Maritimes (2023).\\
+\url{https://navettesfluviales.com/en/}.
+
+\end{thebibliography}
+
+\appendix
+
+\chapter{Interview Transcripts} \label{sec:Appendix_Interviews}
+After the pilot interview, the three other interviews were conducted independently. Therefore, the format of the interviews may possibly not be consistent with each other. 
+\subsubsection{Interviewee protection}
+This goes without saying, but effort has been made to scrub out personal details in the interview (this includes the interviewee's real name). The transcripts here have been modified to protect the anonymity and confidentiality of the interviewed, and the interviewee is informed of this decision prior to the interview. No interviewee had been forcefully co-erced into giving an interview, and their consent has been acquired to record a transcript of the interview.
+
+\section{Interview 1 (Pilot Interview)}
+The transcript for the pilot interview was recorded live by keyboard strokes. Some information may be in shorthand or lost. The interview is conducted online.
+
+\vspace{\baselineskip}
+\noindent \input{Interviews/interview_1}
+
+\newpage
+\section{Interview 2}
+The transcript was transcribed from an audio recording. The interviewee was assured that the audio recording would be deleted and not shared with anyone outside the interviewers, and that it is only to be used to write a transcript. At times, the audio is not clear due to poor mic quality, or loud noises. The interview is conducted online.
+
+\vspace{\baselineskip}
+\noindent \input{Interviews/interview_2}
+
+\newpage
+\section{Interview 3}
+
+\input{Interviews/interview_3}
+
+\newpage
+\section{Interview 4}
+
+\input{Interviews/interview_4}
+
+\end{document}
