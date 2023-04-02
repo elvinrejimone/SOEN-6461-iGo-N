@@ -5,14 +5,13 @@ from Frames.service_selection import Page2
 from utils import *
 LARGE_FONT =("Verdana", 35)
 
-# first window frame start page
   
 class StartPage(tk.Frame):
     def __init__(self, parent, controller):
         tk.Frame.__init__(self, parent)
         
         # label of frame Layout 2
-        label = ttk.Label(self, text =getWord("english","chooseLanguage")+ " | " + getWord("french","chooseLanguage") , font = LARGE_FONT)
+        label = ttk.Label(self, text = getWord("english","chooseLanguage")+ " | " + getWord("french","chooseLanguage") , font = LARGE_FONT)
         label.grid(row = 0, column = 2, padx = 10, pady = 10, columnspan=2)
 
         #Language button
