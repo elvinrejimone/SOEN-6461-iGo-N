@@ -1,0 +1,43 @@
+{
+    "english": {
+      "chooseLanguage": "Choose Language",
+      "welcomeToMontrealFerry": "Welcome to Montreal Ferry",
+      "montrealFerry": "Montreal Ferry",
+      "intercityFerry": "Intercity Ferry",
+      "chooseTicketType": "Choose the Ticket Type",
+      "chooseCity": "Choose City",
+      "confirmTicket": "Confirm Ticket",
+      "chooseQuantity": "Choose Quantity",
+      "chooseFerry": "Choose Ferry",
+      "proceedToPayment": "Proceed to Payment",
+      "payByCard": "Pay by Card",
+      "payByCash": "Pay by Cash",
+      "paymentReceived": "Payment Received",
+      "thankYou": "Thank You",
+      "haveADelightfulJourney": "Have a Delightful Journey",
+      "yourTicket": "Your Ticket",
+      "help": "Help",
+      "seekAssistance": "Seek Assistance"
+    },
+    "french": {
+      "chooseLanguage": "Choisissez la Langue",
+      "welcomeToMontrealFerry": "Bienvenue au traversier de Montréal",
+      "montrealFerry": "Traversier de Montréal",
+      "intercityFerry": "Traversier Intercités",
+      "chooseTicketType": "Choisissez le Type de Billet",
+      "chooseCity": "Choisissez la Ville",
+      "confirmTicket": "Confirmez le Billet",
+      "chooseQuantity": "Choisissez la Quantité",
+      "chooseFerry": "Choisissez le Traversier",
+      "proceedToPayment": "Procéder au Paiement",
+      "payByCard": "Payer par Carte",
+      "payByCash": "Payer en Argent Comptant",
+      "paymentReceived": "Paiement Reçu",
+      "thankYou": "Merci",
+      "haveADelightfulJourney": "Bon Voyage",
+      "yourTicket": "Votre Billet",
+      "help": "Aide",
+      "seekAssistance": "Demander de l'Aide"
+    }
+  }
+  

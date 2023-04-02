@@ -1,0 +1,126 @@
+{
+  "English": {
+    "Montreal-Ferry": {
+      "ports": [
+        " Montreal Old Port",
+        " Longueuil - Departure from Longueuil Marina",
+        " Parc Jean-Drepeau - Stewart Museum"
+      ],
+      "ticket-list": [
+        {
+          "ticket": "Single Ticket",
+          "ticket-ID": "MF01",
+          "price": 5.50,
+          "Details": ""
+        },
+        {
+          "ticket": "Return Ticket",
+          "ticket-ID": "MF02",
+          "price": 7,
+          "Details": ""
+        },
+        {
+          "ticket": "Day Pass Ticket",
+          "ticket-ID": "MF03",
+          "price": 10,
+          "Details": ""
+        },
+        {
+          "ticket": "Recreational Ticket",
+          "ticket-ID": "MF04",
+          "price": 20,
+          "Details": ""
+        },
+        {
+          "ticket": "5 Seater Car Ticket",
+          "ticket-ID": "MF05",
+          "price": 15,
+          "Details": ""
+        },
+        {
+          "ticket": "7/8 Seater Car Ticket",
+          "ticket-ID": "MF06",
+          "price": 20,
+          "Details": ""
+        }
+      ]
+    },
+    "Intercity-Ferry": {
+      "ticket-list": {
+        "ticket": "Intercity Ticket",
+        "ticket-ID": "IF01",
+        "price": 25,
+        "Details": ""
+      },
+      "cities": [
+        "Ottawa",
+        "Toronto",
+        "Quebec City",
+        " Kingston",
+        "Montreal"
+      ]
+    }
+  },
+  "French": {
+    "Montreal-Ferry": {
+      "ports": [
+        " Montreal Old Port",
+        " Longueuil - Departure from Longueuil Marina",
+        " Parc Jean-Drepeau - Stewart Museum"
+      ],
+      "ticket-list": [
+        {
+          "ticket": "aller simple",
+          "ticket-ID": "MF01",
+          "price": 5.50,
+          "Details": ""
+        },
+        {
+          "ticket": "Billet de retour",
+          "ticket-ID": "MF02",
+          "price": 7,
+          "Details": ""
+        },
+        {
+          "ticket": "Billet journalier",
+          "ticket-ID": "MF03",
+          "price": 10,
+          "Details": ""
+        },
+        {
+          "ticket": "Billet récréatif",
+          "ticket-ID": "MF04",
+          "price": 20,
+          "Details": ""
+        },
+        {
+          "ticket": "Billet voiture 5 places",
+          "ticket-ID": "MF05",
+          "price": 15,
+          "Details": ""
+        },
+        {
+          "ticket": "Billet voiture 7/8 places",
+          "ticket-ID": "MF06",
+          "price": 20,
+          "Details": ""
+        }
+      ]
+    },
+    "Intercity-Ferry": {
+      "ticket-list": {
+        "ticket": "Billet interurbain",
+        "ticket-ID": "IF01",
+        "price": 25,
+        "Details": ""
+      },
+      "cities": [
+        "Ottawa",
+        "Toronto",
+        "Quebec City",
+        " Kingston",
+        "Montreal"
+      ]
+    }
+  }
+}
