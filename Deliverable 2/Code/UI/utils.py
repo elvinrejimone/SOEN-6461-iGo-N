@@ -1,4 +1,5 @@
 import json 
+import time
 APP_CONFIG_FILE = "./configs/app_config.json"
 LANGUAGE_WORDS_FILE = "./configs/application_words.json"
 
@@ -28,3 +29,20 @@ def getWord(language, label):
     with open(LANGUAGE_WORDS_FILE) as f:
         words = json.load(f)
     return words[language][label]
+
+def getAppWord(label):
+    return getWord(getAppLanguage(), label)
+
+def getAppState():
+    with open(APP_CONFIG_FILE) as f:
+        config = json.load(f)
+    return config
+
+def setState(state, value):
+    # Load the config file
+    with open(APP_CONFIG_FILE) as f:
+        config = json.load(f)
+    config[state] = value
+    # Save the updated config file
+    with open(APP_CONFIG_FILE, "w") as f:
+        json.dump(config, f)

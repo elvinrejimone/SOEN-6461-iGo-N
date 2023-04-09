@@ -1,23 +1,33 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from Frames.montreal_metro import Page1
-LARGEFONT =("Verdana", 35)
+from utils import *
+LARGE_FONT =("Verdana", 35)
 
-# first window frame start page
-  
-# third window frame page2
-class Page2(tk.Frame):
-    def __init__(self, parent, controller):
-        tk.Frame.__init__(self, parent)
-        label = ttk.Label(self, text ="Page 2", font = LARGEFONT)
-        label.grid(row = 0, column = 4, padx = 10, pady = 10)
-  
-        # button to show frame 2 with text
-        # layout2
-        button1 = ttk.Button(self, text ="Page 1",
-                            command = lambda : controller.show_frame(Page1))
-     
-        # putting the button in its place by
-        # using grid
-        button1.grid(row = 1, column = 1, padx = 10, pady = 10)
+def service_selection(master, show_page):
+    start_page = tk.Frame(master)  
+    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+
+    # Create a label to display the image
+    label = tk.Label(start_page,image=image)
+    label.image = image
+    label.grid(row=0, column=0, columnspan=4)
+    # label of frame Layout 2
+    label = ttk.Label(start_page, text = getAppWord("chooseTicketType") , font = LARGE_FONT)
+    label.grid(row = 2, column = 1, padx = 10, pady = 10, columnspan=2)
+
+    montreal_button = tk.Button(start_page, text=getAppWord("montrealFerry"), command = lambda : select_metro_type(show_page,"MF"), font="Raleway", bg="#20bebe", fg="white", height=2, width=30)
+        
+    intercity_button = tk.Button(start_page, text=getAppWord("intercityFerry"), command = lambda : select_metro_type(show_page,"IF"), font="Raleway", bg="#20bebe", fg="white", height=2, width=30)
+
+    montreal_button.grid(row=4, column=1)
+    intercity_button.grid(row=4, column=2)
+
+       
+    return start_page
+
+def select_metro_type(show_page, type):
+    print("Button pressed!")
+    setState("current-ticket-Type", type)
+    setState("current-page", "TICK_DET")
+    show_page(2)

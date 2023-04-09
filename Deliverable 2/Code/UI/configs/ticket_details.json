@@ -1,5 +1,5 @@
 {
-  "English": {
+  "english": {
     "Montreal-Ferry": {
       "ports": [
         " Montreal Old Port",
@@ -61,7 +61,7 @@
       ]
     }
   },
-  "French": {
+  "french": {
     "Montreal-Ferry": {
       "ports": [
         " Montreal Old Port",
