@@ -1,6 +1,6 @@
 {
   "english": {
-    "Montreal-Ferry": {
+    "MF": {
       "ports": [
         " Montreal Old Port",
         " Longueuil - Departure from Longueuil Marina",
@@ -45,14 +45,14 @@
         }
       ]
     },
-    "Intercity-Ferry": {
+    "IF": {
       "ticket-list": {
         "ticket": "Intercity Ticket",
         "ticket-ID": "IF01",
         "price": 25,
         "Details": ""
       },
-      "cities": [
+      "ports": [
         "Ottawa",
         "Toronto",
         "Quebec City",
@@ -62,7 +62,7 @@
     }
   },
   "french": {
-    "Montreal-Ferry": {
+    "MF": {
       "ports": [
         " Montreal Old Port",
         " Longueuil - Departure from Longueuil Marina",
@@ -107,14 +107,14 @@
         }
       ]
     },
-    "Intercity-Ferry": {
+    "IF": {
       "ticket-list": {
         "ticket": "Billet interurbain",
         "ticket-ID": "IF01",
         "price": 25,
         "Details": ""
       },
-      "cities": [
+      "ports": [
         "Ottawa",
         "Toronto",
         "Quebec City",

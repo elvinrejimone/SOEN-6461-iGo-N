@@ -11,3 +11,7 @@ Pages :
 Metro types:
 1. MF
 2. IF
+
+Payment Types:
+1. payByCard
+2. payByCash
