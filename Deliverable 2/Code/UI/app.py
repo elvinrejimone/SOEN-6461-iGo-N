@@ -16,7 +16,7 @@ from utils import *
  
 LARGE_FONT =("Verdana", 25)
   
-class MultiPageApp:
+class IGO:
     def __init__(self, master):
         self.master = master
         self.master.title("iGo Vending Machine")
@@ -42,5 +42,5 @@ class MultiPageApp:
 
         
 root = tk.Tk()
-app = MultiPageApp(root)
+app = IGO(root)
 root.mainloop()
