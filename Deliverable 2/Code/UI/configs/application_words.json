@@ -28,7 +28,8 @@
     "collectTicket" : "Please Collect your ticket",
     "HelpOntheWay" : "On-Site Assistance is on its way",
     "faqs" : "Frequently Asked Questions (FAQs)",
-    "ferryFull": "The Ferry is Full (You have selected the maximum number of seats)"
+    "ferryFull": "The Ferry is Full (You have selected the maximum number of seats)",
+    "RetryPayment" : "Retry Payment"
   },
   "french": {
     "chooseLanguage": "Choisissez la Langue",
@@ -59,7 +60,8 @@
     "collectTicket" : "Veuillez retirer votre billet",
     "HelpOntheWay" : "L'assistance sur site est en route",
     "faqs" : "Foire aux questions (FAQ)",
-    "ferryFull": "Le Ferry est Full ( Vous avez selectionne le nombre maximum de places)"
+    "ferryFull": "Le Ferry est Full ( Vous avez selectionne le nombre maximum de places)",
+    "RetryPayment" : "Reessayer le paiement"
     }
   }
   

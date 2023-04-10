@@ -63,7 +63,7 @@ def quantity_interface(master, show_page):
     # frame to hold the card interface
     card_frame = tk.Frame(page)
     card_frame.config(bg="white")
-    card_frame.grid(row=3, column=1, padx=10, pady=10)
+    card_frame.grid(row=3, column=1,columnspan=2, padx=10, pady=10)
 
     name_label = tk.Label(card_frame, text=ticket_text, font="Raleway")
     name_label.config(bg="white")
@@ -71,7 +71,7 @@ def quantity_interface(master, show_page):
 
     # Create a label to display the ticket details inside the frame
     details_label = tk.Label(card_frame, text=ticket_details["Details"], font="Raleway")
-    details_label.grid(row=1, column=0, padx=10, pady=10)
+    details_label.grid(row=1, column=0,columnspan=2, padx=10, pady=10)
 
 
     #frame to hold the plus and minus buttons and the entry for the quantity
@@ -83,7 +83,9 @@ def quantity_interface(master, show_page):
     minus_button.pack(side=tk.LEFT)
 
     quantity_entry = tk.Entry(quantity_frame, textvariable=quantity_var, width=10, font=("Raleway", 30),justify=tk.CENTER)
+    quantity_entry.config(state="disabled")
     quantity_entry.pack(side=tk.LEFT)
+    
 
     plus_button = tk.Button(quantity_frame, text="+", command=increase, font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     plus_button.pack(side=tk.LEFT)  
@@ -102,11 +104,11 @@ def quantity_interface(master, show_page):
 
  #### HELP AND HOME BOILERPLATE 
      # Create a home button permanently in the bottom right
-    home_btn = tk.Button(page, text="Cancel", command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
+    home_btn = tk.Button(page, text=getAppWord("cancel"), command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
     home_btn.grid(column=3, row=8, sticky="sw")
 
     # Create a help button permanently in the top right
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text=getAppWord("help"), command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 
@@ -145,7 +147,7 @@ def increase():
 # function to decrease the quantity by one
 def decrease():
     quantity = quantity_var.get()
-    if quantity > 0:
+    if quantity > 1:
         quantity -= 1
         quantity_var.set(quantity)
         update_total()

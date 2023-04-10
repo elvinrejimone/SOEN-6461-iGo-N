@@ -29,7 +29,7 @@
         {
             "time": 1700,
             "time_text": "5:00 PM Ferry",
-            "remaining_seats": 12,
+            "remaining_seats": 11,
             "price": 30.0
         },
         {
@@ -49,7 +49,7 @@
         {
             "time": 1700,
             "time_text": "5:00 PM Ferry",
-            "remaining_seats": 48,
+            "remaining_seats": 45,
             "price": 30.0
         },
         {

@@ -44,7 +44,9 @@ def ticket_confirmation(master, show_page):
 
     ## Ticket Card 
     ticket_card = tk.Frame(page, background="white", relief="raised", borderwidth=5)
-    ticket_card.grid(row=4, column=1, padx=10, pady=10, columnspan=2)
+    ticket_card.grid(row=4, column=0, padx=10, pady=10, columnspan=4)
+    ticket_card.grid_rowconfigure(1, weight=1)
+    ticket_card.grid_columnconfigure(1, weight=1)
 
     header = tk.Label(ticket_card, text="iGo Ticket", font=("Arial", 20), background="white", foreground="#731dd8")
     header.grid(row=0, column=0, padx=10, pady=10)

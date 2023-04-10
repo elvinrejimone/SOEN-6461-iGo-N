@@ -53,11 +53,11 @@ def payment_interface(master, show_page):
 
     #### HELP AND HOME BOILERPLATE 
      # Create a home button permanently in the bottom right
-    home_btn = tk.Button(page, text="Cancel", command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
-    home_btn.grid(column=3, row=6, sticky="sw")
+    home_btn = tk.Button(page, text=getAppWord("cancel"), command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
+    home_btn.grid(column=3, row=8, sticky="sw")
 
     # Create a help button permanently in the top right
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text=getAppWord("help"), command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 
@@ -108,10 +108,10 @@ def paymentErrorWindow():
     error_label = ttk.Label(error_popup, text= getAppWord(getState("payment-type")) + " Error: Unable to process payment.", font = MEDIUM_FONT)
     error_label.pack(pady=10)
 
-    ok_button = tk.Button(error_popup, text="Retry Payment", command=lambda: handle_error_ok_button(error_popup), foreground="white", background="#20bebe", font=("Helvetica", 12, "bold"), width=20, height=2)
+    ok_button = tk.Button(error_popup, text=getAppWord("RetryPayment"), command=lambda: handle_error_ok_button(error_popup), foreground="white", background="#20bebe", font=("Helvetica", 12, "bold"), width=20, height=2)
     ok_button.pack(pady=20)
     
-    cancel_button = tk.Button(error_popup, text="Cancel Transaction", command=lambda: handle_error_cancel_button(error_popup), foreground="white", background="#d62828", font=("Helvetica", 12, "bold"),  width=20, height=2)
+    cancel_button = tk.Button(error_popup, text=getAppWord("cancel"), command=lambda: handle_error_cancel_button(error_popup), foreground="white", background="#d62828", font=("Helvetica", 12, "bold"),  width=20, height=2)
     cancel_button.pack(pady=20)
 
     error_popup.mainloop()

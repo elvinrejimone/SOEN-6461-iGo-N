@@ -21,11 +21,11 @@ def ferry_details(master, show_page):
 
      #### HELP AND HOME BOILERPLATE 
      # Create a home button permanently in the bottom right
-    home_btn = tk.Button(page, text="Cancel", command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
-    home_btn.grid(column=3, row=5, sticky="sw")
+    home_btn = tk.Button(page, text=getAppWord("cancel"), command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
+    home_btn.grid(column=3, row=8, sticky="sw")
 
     # Create a help button permanently in the top right
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text=getAppWord("help"), command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 

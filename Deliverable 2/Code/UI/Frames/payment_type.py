@@ -27,7 +27,7 @@ def payment_type_page(master, show_page):
 
      #### HOME BOILERPLATE 
      # Create a home button permanently in the bottom right
-    home_btn = tk.Button(page, text="Cancel", command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
+    home_btn = tk.Button(page, text=getAppWord("cancel"), command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
     home_btn.grid(column=3, row=6, sticky="sw")
 
     def cancel_transaction(show_page):
