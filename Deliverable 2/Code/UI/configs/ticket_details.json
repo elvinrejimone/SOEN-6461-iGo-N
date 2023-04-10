@@ -11,37 +11,37 @@
           "ticket": "Single Ticket",
           "ticket-ID": "MF01",
           "price": 5.50,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Valid for a single journey from one port to another."
         },
         {
           "ticket": "Return Ticket",
           "ticket-ID": "MF02",
           "price": 7,
-          "Details": "Valid for use 2 trips from two different Montreal ports"
+          "Details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets."
         },
         {
           "ticket": "Day Pass Ticket",
           "ticket-ID": "MF03",
           "price": 10,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Enables unlimited travel on the same day of purchase between ports."
         },
         {
           "ticket": "Recreational Ticket",
           "ticket-ID": "MF04",
           "price": 20,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Allows for a journey from one port to another and then back to the original port."
         },
         {
           "ticket": "5 Seater Car Ticket",
           "ticket-ID": "MF05",
           "price": 15,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Valid for one car with up to 5 passengers traveling between ports."
         },
         {
           "ticket": "7/8 Seater Car Ticket",
           "ticket-ID": "MF06",
           "price": 20,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Valid for one car with up to 7 or 8 passengers traveling between ports."
         }
       ]
     },
@@ -49,8 +49,8 @@
       "ticket-list": {
         "ticket": "Intercity Ticket",
         "ticket-ID": "IF01",
-        "price": 30,
-        "Details": "Valid for use once from one Montreal port to another"
+        "price": 25,
+        "Details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase."
       },
       "ports": [
         "Ottawa",
@@ -73,37 +73,37 @@
           "ticket": "aller simple",
           "ticket-ID": "MF01",
           "price": 5.50,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Valable pour un seul voyage d'un port a l'autre."
         },
         {
           "ticket": "Billet de retour",
           "ticket-ID": "MF02",
           "price": 7,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Permet d'effectuer deux trajets distincts entre les ports et offre un tarif reduit par rapport a l'achat de deux billets aller simple."
         },
         {
           "ticket": "Billet journalier",
           "ticket-ID": "MF03",
           "price": 10,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Permet un nombre illimite de voyages le jour meme de l'achat entre les ports."
         },
         {
           "ticket": "Billet recreatif",
           "ticket-ID": "MF04",
           "price": 20,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Permet de voyager d'un port a l'autre, puis de revenir au port d'origine."
         },
         {
           "ticket": "Billet voiture 5 places",
           "ticket-ID": "MF05",
           "price": 15,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Valable pour une voiture avec un maximum de 5 passagers voyageant entre les ports."
         },
         {
           "ticket": "Billet voiture 7/8 places",
           "ticket-ID": "MF06",
           "price": 20,
-          "Details": "Valid for use once from one Montreal port to another"
+          "Details": "Valable pour une voiture de 7 ou 8 passagers maximum voyageant entre les ports."
         }
       ]
     },
@@ -111,8 +111,8 @@
       "ticket-list": {
         "ticket": "Billet interurbain",
         "ticket-ID": "IF01",
-        "price": 30,
-        "Details": "Valid for use once from one Montreal port to another"
+        "price": 25,
+        "Details": "Valable pour un voyage unique d'un port a un port de destination specifique selectionne au moment de l'achat."
       },
       "ports": [
         "Ottawa",
@@ -123,4 +123,5 @@
       ]
     }
   }
+
 }

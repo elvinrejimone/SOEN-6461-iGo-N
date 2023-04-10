@@ -7,6 +7,8 @@ import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 40)
 MEDIUM_FONT =("Verdana", 25)
 SMALL_FONT =("Verdana", 15)
+SMALLER_FONT =("Verdana", 12)
+
 BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 
@@ -133,6 +135,8 @@ def increase():
     if(isIF):
         if(quantity < maxLimit):
             quantity += 1
+        else:
+            ferryFull()
     else:
         quantity += 1
     quantity_var.set(quantity)
@@ -157,3 +161,17 @@ def update_total():
     # Format the total price with two decimal places
     total_price = "{:.1f}".format(total_price)
     total_price_label.config(text="Total Price: $ " + total_price)
+
+def ferryFull():
+    # Create an error popup
+    error_popup = tk.Toplevel()
+    error_popup.title("No More Seats")
+    error_popup.geometry("700x100")
+
+    error_label = ttk.Label(error_popup, text=getAppWord("ferryFull"), font=SMALLER_FONT)
+    error_label.pack(pady=10)
+
+    ok_button = ttk.Button(error_popup, text="OK", command=error_popup.destroy)
+    ok_button.pack(pady=10)
+
+    error_popup.mainloop()
