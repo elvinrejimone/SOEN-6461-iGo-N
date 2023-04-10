@@ -1,0 +1,17 @@
+Pages :
+1. LAN_SEL
+2. FERRY_TYPE
+3. TICK_DET
+4. QUANT_DET
+5. PAY_OPT
+6. PAY_DIS
+7. TICK_CON
+8. HELP
+
+Metro types:
+1. MF
+2. IF
+
+Payment Types:
+1. payByCard
+2. payByCash
