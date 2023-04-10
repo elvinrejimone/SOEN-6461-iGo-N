@@ -29,7 +29,8 @@
     "HelpOntheWay" : "On-Site Assistance is on its way",
     "faqs" : "Frequently Asked Questions (FAQs)",
     "ferryFull": "The Ferry is Full (You have selected the maximum number of seats)",
-    "RetryPayment" : "Retry Payment"
+    "RetryPayment" : "Retry Payment",
+    "unabletoprocess" : " Error: Unable to Process Payment"
   },
   "french": {
     "chooseLanguage": "Choisissez la Langue",
@@ -61,7 +62,8 @@
     "HelpOntheWay" : "L'assistance sur site est en route",
     "faqs" : "Foire aux questions (FAQ)",
     "ferryFull": "Le Ferry est Full ( Vous avez selectionne le nombre maximum de places)",
-    "RetryPayment" : "Reessayer le paiement"
+    "RetryPayment" : "Reessayer le paiement",
+    "unabletoprocess" : " Erreur : Impossible de traiter le paiement"
     }
   }
   

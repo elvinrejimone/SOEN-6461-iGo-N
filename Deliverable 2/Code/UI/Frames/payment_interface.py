@@ -103,9 +103,9 @@ def paymentErrorWindow():
     # Create an error popup
     error_popup = tk.Toplevel()
     error_popup.title("Payment Error")
-    error_popup.geometry("800x500")
+    error_popup.geometry("850x500")
 
-    error_label = ttk.Label(error_popup, text= getAppWord(getState("payment-type")) + " Error: Unable to process payment.", font = MEDIUM_FONT)
+    error_label = ttk.Label(error_popup, text= getAppWord(getState("payment-type")) + getAppWord("unabletoprocess"), font = MEDIUM_FONT)
     error_label.pack(pady=10)
 
     ok_button = tk.Button(error_popup, text=getAppWord("RetryPayment"), command=lambda: handle_error_ok_button(error_popup), foreground="white", background="#20bebe", font=("Helvetica", 12, "bold"), width=20, height=2)
