@@ -26,7 +26,11 @@ def service_selection(master, show_page):
      #### HELP AND HOME BOILERPLATE 
      # Create a home button permanently in the bottom right
     home_btn = tk.Button(page, text="Cancel", command=lambda: cancel_transaction(show_page), font="Raleway", bg="#c1666b", fg="white", height=2, width=10)
-    home_btn.grid(column=3, row=5, sticky="sw")
+    home_btn.grid(column=3, row=6, sticky="sw")
+
+    #  # Create a help button permanently in the top right
+    # help_btn = tk.Button(page, text="Back", command=lambda: go_back(show_page), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    # help_btn.grid(column=0, row=0, sticky="ne")
 
     # Create a help button permanently in the top right
     help_btn = tk.Button(page, text="Help", command=lambda: help_page(show_page), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
@@ -36,6 +40,11 @@ def service_selection(master, show_page):
     def cancel_transaction(show_page):
         setState("current-page", "LAN_SEL")
         show_page(0)
+    
+    # def go_back(show_page):
+    #     setState("current-page", "LAN_SEL")
+    #     show_page(0)
+
 
     def help_page(show_page):
         setState("current-page", "HELP")

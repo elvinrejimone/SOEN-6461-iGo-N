@@ -69,7 +69,7 @@ def getState(state):
     return config[state]
 
 def resetState():
-    newConfig = {"language": "", "current-page": "LAN_SEL", "current-ticket-ID": "", "current-ticket-Type": "", "payment-type": "payByCard", "ticket-quantity": 0, "total-amount": 0}
+    newConfig = {"machine-city": "Montreal","language": "", "current-page": "LAN_SEL", "current-ticket-ID": "", "current-ticket-Type": "","current-port": "None", "payment-type": "", "ticket-quantity": 0, "total-amount": 0, "machine-city": "Montreal"}
     # Save the New config file
     with open(APP_CONFIG_FILE, "w") as f:
         json.dump(newConfig, f)
@@ -84,7 +84,12 @@ def getAllTicketDetails():
     # Load the config file
     with open(TICKET_FILE) as f:
         words = json.load(f)
-    return words[getAppLanguage()][getState("current-ticket-Type")]
+    return words[getAppLanguage()][getState("current-ticket-Type")]["ticket-list"]
+
+def getIntercityCitiesAndTicket():
+    with open(TICKET_FILE) as f:
+        words = json.load(f)
+    return words[getAppLanguage()]["IF"]
 
 #gets ticket details for the current ferry type and ticketID
 def getTicketDetails(ticket_id):

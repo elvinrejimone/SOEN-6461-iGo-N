@@ -9,18 +9,23 @@
       "chooseCity": "Choose City",
       "confirmTicket": "Confirm Ticket",
       "chooseQuantity": "Choose Quantity",
+      "paymentMethod" : "Choose Payment Method",
       "chooseFerry": "Choose Ferry",
       "totalAmount" : "Total Amount",
       "paymentPage" : "Payment",
       "proceedToPayment": "Proceed to Payment",
       "payByCard": "Pay by Card",
+      "paymentProcessing" : "Processing Payment",
+      "PaymentSuccess" : " Payment Successful",
       "payByCash": "Pay by Cash",
       "paymentReceived": "Payment Received",
-      "thankYou": "Thank You",
+      "thankYou": "Thank You !",
       "haveADelightfulJourney": "Have a Delightful Journey",
       "yourTicket": "Your Ticket",
       "help": "Help",
-      "seekAssistance": "Seek Assistance"
+      "cancel" : "Annuler",
+      "seekAssistance": "Seek Assistance",
+      "collectTicket" : "Please Collect your ticket"
     },
     "french": {
       "chooseLanguage": "Choisissez la Langue",
@@ -36,14 +41,19 @@
       "proceedToPayment": "Proceder au Paiement",
       "totalAmount" : "Montant total",
       "paymentPage" : "Paiement",
+      "paymentMethod" : "Choisissez le mode de paiement",
       "payByCard": "Payer par Carte",
+      "PaymentSuccess" : "paiement réussi",
+      "paymentProcessing" : "traiter le paiement",
       "payByCash": "Payer en Argent Comptant",
       "paymentReceived": "Paiement Reçu",
-      "thankYou": "Merci",
+      "thankYou": "Merci !",
       "haveADelightfulJourney": "Bon Voyage",
       "yourTicket": "Votre Billet",
       "help": "Aide",
-      "seekAssistance": "Demander de l'Aide"
+      "cancel": "Annuler",
+      "seekAssistance": "Demander de l'Aide",
+      "collectTicket" : "Veuillez retirer votre billet"
     }
   }
   

@@ -3,6 +3,7 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
 LARGE_FONT =("Verdana", 35)
+MEDIUM_FONT =("Verdana", 15)
 
 def ferry_details(master, show_page):
     page = tk.Frame(master)  
@@ -15,19 +16,6 @@ def ferry_details(master, show_page):
     # label of frame Layout 2
     label = ttk.Label(page, text = getAppWord("chooseTicketType"), font = LARGE_FONT)
     label.grid(row = 2, column = 1, padx = 10, pady = 10, columnspan=2)
-
-    #Language button
-    browse_text = tk.StringVar()
-    browse_btn = tk.Button(page, text=getAppWord("montrealFerry"), command = lambda : select_metro_type(show_page,"MF"), font="Raleway", bg="#20bebe", fg="white", height=2, width=15)
-    browse_text.set("English")
-    browse_btn.grid(column=1, row=4)
-
-    #Language button
-    browse_text2 = tk.StringVar()
-    browse_btn2 = tk.Button(page, text=getAppWord("intercityFerry"), command = lambda : select_metro_type(show_page,"IF"), font="Raleway", bg="#20bebe", fg="white", height=2, width=15)
-    browse_text2.set("French")
-    browse_btn2.grid(column=2, row=4)
-
 
      #### HELP AND HOME BOILERPLATE 
      # Create a home button permanently in the bottom right
@@ -47,12 +35,50 @@ def ferry_details(master, show_page):
         setState("current-page", "HELP")
         show_page(0)
 
-
     ##### HELP AND HOME BOILERPLATE END
 
+    if(getState("current-ticket-Type") == "MF"):
+        ticketsArray = getAllTicketDetails()
+        # Create a list to store the buttons
+        buttons = []
+
+        # Iterate over the ticketsArray of strings
+        for i in range(len(ticketsArray)):
+            # Create a button with the text from the ticketsArray
+            button = tk.Button(page, text=ticketsArray[i]["ticket"]+ " | $ "+str(ticketsArray[i]["price"]), command=lambda i=i: handle_montreal_ferry_ticket(ticketsArray[i]["ticket-ID"],show_page), bg="#20bebe", fg="white", height=2, width=30, font=MEDIUM_FONT)
+            # Append the button to the list
+            buttons.append(button)
+            # Grid the button in a 2x3 layout
+            button.grid(row=i//3 + 3, column=i%3 , pady=10)
+    else :
+        ticketDetails = getIntercityCitiesAndTicket()
+        ticketsArray = ticketDetails["ports"]
+        ticketsArray.remove(getState("machine-city"))
+        buttons = []
+
+        # Iterate over the ticketsArray of strings
+        for i in range(len(ticketsArray)):
+            # Create a button with the text from the ticketsArray
+            button = tk.Button(page, text=ticketsArray[i]+ " | From $ "+str(ticketDetails["ticket-list"]["price"]), command=lambda i=i: handle_intercity_ferry_ticket(ticketDetails["ticket-list"]["ticket-ID"], ticketsArray[i], show_page ), bg="#20bebe", fg="white", height=2, width=30, font=MEDIUM_FONT)
+            # Append the button to the list
+            buttons.append(button)
+            # Grid the button in a 2x3 layout
+            button.grid(row=i//3 + 3, column=i%3 , pady=10)
 
     return page
 
-def select_metro_type(show_page, type):
-    setState("current-ticket-Type", type)
-    show_page(3)    
+def select_ticket_type(show_page):
+    if(getState("current-ticket-Type") == "IF"):
+        show_page(7) 
+    else:
+        show_page(3)    
+
+def handle_montreal_ferry_ticket(ticket_id, show_page ):
+    print("Id::"+ ticket_id)
+    setState("current-ticket-ID", ticket_id)
+    select_ticket_type(show_page)
+
+def handle_intercity_ferry_ticket(ticket_id, port, show_page ):
+    setState("current-ticket-ID", ticket_id)
+    setState("current-port", port)
+    select_ticket_type(show_page)

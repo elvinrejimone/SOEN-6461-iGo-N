@@ -11,37 +11,37 @@
           "ticket": "Single Ticket",
           "ticket-ID": "MF01",
           "price": 5.50,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "Return Ticket",
           "ticket-ID": "MF02",
           "price": 7,
-          "Details": ""
+          "Details": "Valid for use 2 trips from two different Montreal ports"
         },
         {
           "ticket": "Day Pass Ticket",
           "ticket-ID": "MF03",
           "price": 10,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "Recreational Ticket",
           "ticket-ID": "MF04",
           "price": 20,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "5 Seater Car Ticket",
           "ticket-ID": "MF05",
           "price": 15,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "7/8 Seater Car Ticket",
           "ticket-ID": "MF06",
           "price": 20,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         }
       ]
     },
@@ -49,14 +49,14 @@
       "ticket-list": {
         "ticket": "Intercity Ticket",
         "ticket-ID": "IF01",
-        "price": 25,
-        "Details": ""
+        "price": 30,
+        "Details": "Valid for use once from one Montreal port to another"
       },
       "ports": [
         "Ottawa",
         "Toronto",
         "Quebec City",
-        " Kingston",
+        "Kingston",
         "Montreal"
       ]
     }
@@ -73,37 +73,37 @@
           "ticket": "aller simple",
           "ticket-ID": "MF01",
           "price": 5.50,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "Billet de retour",
           "ticket-ID": "MF02",
           "price": 7,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "Billet journalier",
           "ticket-ID": "MF03",
           "price": 10,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
-          "ticket": "Billet récréatif",
+          "ticket": "Billet recreatif",
           "ticket-ID": "MF04",
           "price": 20,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "Billet voiture 5 places",
           "ticket-ID": "MF05",
           "price": 15,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         },
         {
           "ticket": "Billet voiture 7/8 places",
           "ticket-ID": "MF06",
           "price": 20,
-          "Details": ""
+          "Details": "Valid for use once from one Montreal port to another"
         }
       ]
     },
@@ -111,14 +111,14 @@
       "ticket-list": {
         "ticket": "Billet interurbain",
         "ticket-ID": "IF01",
-        "price": 25,
-        "Details": ""
+        "price": 30,
+        "Details": "Valid for use once from one Montreal port to another"
       },
       "ports": [
         "Ottawa",
         "Toronto",
         "Quebec City",
-        " Kingston",
+        "Kingston",
         "Montreal"
       ]
     }
