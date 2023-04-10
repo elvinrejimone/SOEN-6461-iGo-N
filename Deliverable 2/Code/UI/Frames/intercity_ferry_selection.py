@@ -3,12 +3,14 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
 from intercityFerryTicketing import FerrySchedule
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 35)
 SMALL_FONT =("Verdana", 15)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 def intercity_time_selection(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+    image = tk.PhotoImage(file=BANNER_IMAGE)
 
     # Create a label to display the image
     label = tk.Label(page,image=image)
@@ -21,7 +23,6 @@ def intercity_time_selection(master, show_page):
        
     schedule = FerrySchedule(getState("current-port"))
     city_schedule = schedule.get_next_ferry_schedules()
-    print(getState("current-port")+" Schedule:", city_schedule)
     global buttons 
     buttons = []
     for i in range(len(city_schedule)):
@@ -38,7 +39,7 @@ def intercity_time_selection(master, show_page):
     home_btn.grid(column=3, row=6, sticky="sw")
 
 
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(show_page), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 
@@ -47,9 +48,8 @@ def intercity_time_selection(master, show_page):
         show_page(0)
 
 
-    def help_page(show_page):
-        setState("current-page", "HELP")
-        show_page(0)
+    def help_page():
+        help_popup.show_help_popup()
 
 
     ##### HELP AND HOME BOILERPLATE END
@@ -63,6 +63,5 @@ def select_metro_type(show_page, type):
     
 
 def handle_intercity_ferry_time(show_page,time, city_object):
-    print(city_object)
     setState("IF-ticket-time", time)
     show_page(3)

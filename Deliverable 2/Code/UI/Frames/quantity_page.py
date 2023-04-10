@@ -3,14 +3,16 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
 from intercityFerryTicketing import FerrySchedule
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 40)
 MEDIUM_FONT =("Verdana", 25)
 SMALL_FONT =("Verdana", 15)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 
 def quantity_interface(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+    image = tk.PhotoImage(file=BANNER_IMAGE)
 
     # Create a label to display the image
     label = tk.Label(page,image=image)
@@ -42,7 +44,6 @@ def quantity_interface(master, show_page):
     else:
         schedule = FerrySchedule(getState("current-port"))
         city_schedule = schedule.get_ferry_schedule_by_time(getState("IF-ticket-time"))
-        print(getState("current-port")+" Schedule:", city_schedule)
         ticket_Object = getIntercityCitiesAndTicket()
         ticket_details = ticket_Object["ticket-list"]
         ticket_details["price"] = city_schedule["price"]
@@ -103,7 +104,7 @@ def quantity_interface(master, show_page):
     home_btn.grid(column=3, row=8, sticky="sw")
 
     # Create a help button permanently in the top right
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(show_page), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 
@@ -111,9 +112,8 @@ def quantity_interface(master, show_page):
         setState("current-page", "LAN_SEL")
         show_page(0)
 
-    def help_page(show_page):
-        setState("current-page", "HELP")
-        show_page(0)
+    def help_page():
+        help_popup.show_help_popup()
 
 
     ##### HELP AND HOME BOILERPLATE END
@@ -122,10 +122,7 @@ def quantity_interface(master, show_page):
 
 
 def proceed_to_Payment(show_page):  
-    print(str(quantity_var.get()) + "  |  " +str(total_price))
     setState("ticket-quantity", quantity_var.get())
-    if(isIF):
-        schedule.decrement_seats_by_value(getState("IF-ticket-time"),int(quantity_var.get()))
     setState("total-amount", total_price)
     show_page(4)
 
@@ -160,6 +157,3 @@ def update_total():
     # Format the total price with two decimal places
     total_price = "{:.1f}".format(total_price)
     total_price_label.config(text="Total Price: $ " + total_price)
-
-def handle_intercity_ferry_time(time, city_object):
-    print(city_object)

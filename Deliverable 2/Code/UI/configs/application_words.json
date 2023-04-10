@@ -10,7 +10,7 @@
       "confirmTicket": "Confirm Ticket",
       "chooseQuantity": "Choose Quantity",
       "paymentMethod" : "Choose Payment Method",
-      "chooseFerry": "Choose Ferry",
+      "chooseFerry": "Choose from Ferry Options Today",
       "totalAmount" : "Total Amount",
       "paymentPage" : "Payment",
       "proceedToPayment": "Proceed to Payment",
@@ -23,9 +23,11 @@
       "haveADelightfulJourney": "Have a Delightful Journey",
       "yourTicket": "Your Ticket",
       "help": "Help",
-      "cancel" : "Annuler",
+      "cancel" : "Cancel",
       "seekAssistance": "Seek Assistance",
-      "collectTicket" : "Please Collect your ticket"
+      "collectTicket" : "Please Collect your ticket",
+      "HelpOntheWay" : "On-Site Assistance is on its way",
+      "faqs" : "Frequently Asked Questions (FAQs)"
     },
     "french": {
       "chooseLanguage": "Choisissez la Langue",
@@ -37,7 +39,7 @@
       "chooseCity": "Choisissez la Ville",
       "confirmTicket": "Confirmez le Billet",
       "chooseQuantity": "Choisissez la Quantite",
-      "chooseFerry": "Choisissez le Traversier",
+      "chooseFerry": "Choisissez parmi les options de ferry aujourd'hui",
       "proceedToPayment": "Proceder au Paiement",
       "totalAmount" : "Montant total",
       "paymentPage" : "Paiement",
@@ -53,7 +55,9 @@
       "help": "Aide",
       "cancel": "Annuler",
       "seekAssistance": "Demander de l'Aide",
-      "collectTicket" : "Veuillez retirer votre billet"
+      "collectTicket" : "Veuillez retirer votre billet",
+      "HelpOntheWay" : "L'assistance sur site est en route",
+      "faqs" : "Foire aux questions (FAQ)"
     }
   }
   

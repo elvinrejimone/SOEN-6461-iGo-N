@@ -2,11 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 35)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 def service_selection(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+    image = tk.PhotoImage(file=BANNER_IMAGE)
 
     # Create a label to display the image
     label = tk.Label(page,image=image)
@@ -40,15 +42,10 @@ def service_selection(master, show_page):
     def cancel_transaction(show_page):
         setState("current-page", "LAN_SEL")
         show_page(0)
-    
-    # def go_back(show_page):
-    #     setState("current-page", "LAN_SEL")
-    #     show_page(0)
 
 
     def help_page(show_page):
-        setState("current-page", "HELP")
-        show_page(0)
+        help_popup.show_help_popup()
 
 
     ##### HELP AND HOME BOILERPLATE END

@@ -3,6 +3,8 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
 LARGE_FONT =("Verdana", 25)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
+
 
 
 def StartPage(master, show_page):

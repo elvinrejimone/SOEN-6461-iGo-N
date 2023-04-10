@@ -3,13 +3,15 @@ from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
 from intercityFerryTicketing import FerrySchedule
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 40)
 MEDIUM_FONT =("Verdana", 20)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 
 def ticket_confirmation(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+    image = tk.PhotoImage(file=BANNER_IMAGE)
 
     # Create a label to display the image
     label = tk.Label(page,image=image)
@@ -34,9 +36,7 @@ def ticket_confirmation(master, show_page):
         ticket_text = port + ticket_details["ticket"] 
     else:
         schedule = FerrySchedule(getState("current-port"))
-        city_schedule = schedule.get_ferry_schedule_by_time(getState("IF-ticket-time"))
-        print(getState("current-port")+" Schedule:", city_schedule)
-        
+        city_schedule = schedule.get_ferry_schedule_by_time(getState("IF-ticket-time"))        
         ticket_Object = getIntercityCitiesAndTicket()
         ticket_details = ticket_Object["ticket-list"]
         

@@ -2,11 +2,13 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 35)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 def payment_type_page(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+    image = tk.PhotoImage(file=BANNER_IMAGE)
 
     # Create a label to display the image
     label = tk.Label(page,image=image)

@@ -2,12 +2,14 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 35)
 MEDIUM_FONT =("Verdana", 15)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 def ferry_details(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
+    image = tk.PhotoImage(file=BANNER_IMAGE)
 
     # Create a label to display the image
     label = tk.Label(page,image=image)
@@ -23,7 +25,7 @@ def ferry_details(master, show_page):
     home_btn.grid(column=3, row=5, sticky="sw")
 
     # Create a help button permanently in the top right
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(show_page), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 
@@ -31,9 +33,9 @@ def ferry_details(master, show_page):
         setState("current-page", "LAN_SEL")
         show_page(0)
 
-    def help_page(show_page):
+    def help_page():
         setState("current-page", "HELP")
-        show_page(0)
+        help_popup.show_help_popup()
 
     ##### HELP AND HOME BOILERPLATE END
 
@@ -69,12 +71,11 @@ def ferry_details(master, show_page):
 
 def select_ticket_type(show_page):
     if(getState("current-ticket-Type") == "IF"):
-        show_page(7) 
+        show_page(7)
     else:
         show_page(3)    
 
 def handle_montreal_ferry_ticket(ticket_id, show_page ):
-    print("Id::"+ ticket_id)
     setState("current-ticket-ID", ticket_id)
     select_ticket_type(show_page)
 

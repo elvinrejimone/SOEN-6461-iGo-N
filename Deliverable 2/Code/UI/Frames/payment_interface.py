@@ -2,14 +2,18 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
+from intercityFerryTicketing import FerrySchedule
+import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 40)
 MEDIUM_FONT =("Verdana", 20)
+BANNER_IMAGE = "./Assets/iGoBannerMAIN.png"
 
 
 def payment_interface(master, show_page):
     page = tk.Frame(master)  
-    image = tk.PhotoImage(file="Assets\iGoBannerMAIN.png")
-
+    image = tk.PhotoImage(file=BANNER_IMAGE)
+    global show
+    show = show_page
     # Create a label to display the image
     label = tk.Label(page,image=image)
     label.image = image
@@ -53,7 +57,7 @@ def payment_interface(master, show_page):
     home_btn.grid(column=3, row=6, sticky="sw")
 
     # Create a help button permanently in the top right
-    help_btn = tk.Button(page, text="Help", command=lambda: help_page(show_page), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
+    help_btn = tk.Button(page, text="Help", command=lambda: help_page(), font="Raleway", bg="#731dd8", fg="white", height=2, width=10)
     help_btn.grid(column=3, row=0, sticky="nw")
 
 
@@ -61,9 +65,8 @@ def payment_interface(master, show_page):
         setState("current-page", "LAN_SEL")
         show_page(0)
 
-    def help_page(show_page):
-        setState("current-page", "HELP")
-        show_page(0)
+    def help_page():
+        help_popup.show_help_popup()
 
 
     ##### HELP AND HOME BOILERPLATE END
@@ -81,17 +84,57 @@ def paymentDone(show_page):
     simulate_success_btn.grid_remove()
     simulate_error_btn.grid_remove()
     done_text.grid() 
-    time.sleep(1)   
+    time.sleep(0.5) 
+    if(getState("current-ticket-Type")=="IF"):
+        schedule = FerrySchedule(getState("current-port"))
+        schedule.decrement_seats_by_value(getState("IF-ticket-time"),int(getState("ticket-quantity")))  
     go_to_confirmation(show_page)
 
 def paymentError():
     simulate_error_btn.grid_remove()
+    simulate_success_btn.grid_remove()   
+    paymentErrorWindow()
+    retry_payment_btn.grid()
+
+def paymentErrorWindow():
+    simulate_error_btn.grid_remove()
     simulate_success_btn.grid_remove()
-    retry_payment_btn.grid()   
+
+    # Create an error popup
+    error_popup = tk.Toplevel()
+    error_popup.title("Payment Error")
+    error_popup.geometry("800x500")
+
+    error_label = ttk.Label(error_popup, text= getAppWord(getState("payment-type")) + " Error: Unable to process payment.", font = MEDIUM_FONT)
+    error_label.pack(pady=10)
+
+    ok_button = tk.Button(error_popup, text="Retry Payment", command=lambda: handle_error_ok_button(error_popup), foreground="white", background="#20bebe", font=("Helvetica", 12, "bold"), width=20, height=2)
+    ok_button.pack(pady=20)
+    
+    cancel_button = tk.Button(error_popup, text="Cancel Transaction", command=lambda: handle_error_cancel_button(error_popup), foreground="white", background="#d62828", font=("Helvetica", 12, "bold"),  width=20, height=2)
+    cancel_button.pack(pady=20)
+
+    error_popup.mainloop()
+
+def handle_error_ok_button(error_popup):
+    # Handle the error here
+    print("Error handled")
+
+    # Destroy the popup
+    error_popup.destroy()
+    retryPayment()
 
 def retryPayment():
     print("Retrying!")
     retry_payment_btn.grid_remove()  
     simulate_error_btn.grid()
     simulate_success_btn.grid()
-     
+
+def handle_error_cancel_button(error_popup):
+    # Handle the error here
+    print("Error handled")
+
+    # Destroy the popup
+    error_popup.destroy()
+    setState("current-page", "LAN_SEL")
+    show(0)
