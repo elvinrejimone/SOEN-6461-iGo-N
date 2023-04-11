@@ -11,7 +11,7 @@
     "chooseQuantity": "Choose Quantity",
     "paymentMethod" : "Choose Payment Method",
     "chooseFerry": "Choose from Ferry Options Today",
-    "totalAmount" : "Total Amount",
+    "totalAmount" : "Total Price (including tax)",
     "paymentPage" : "Payment",
     "proceedToPayment": "Proceed to Payment",
     "payByCard": "Pay by Card",
@@ -30,7 +30,8 @@
     "faqs" : "Frequently Asked Questions (FAQs)",
     "ferryFull": "The Ferry is Full (You have selected the maximum number of seats)",
     "RetryPayment" : "Retry Payment",
-    "unabletoprocess" : " Error: Unable to Process Payment"
+    "unabletoprocess" : " Error: Unable to Process Payment",
+    "ferryFullDestination" : "All Ferries are full for the selected Destination "
   },
   "french": {
     "chooseLanguage": "Choisissez la Langue",
@@ -44,7 +45,7 @@
     "chooseQuantity": "Choisissez la Quantite",
     "chooseFerry": "Choisissez parmi les options de ferry aujourd'hui",
     "proceedToPayment": "Proceder au Paiement",
-    "totalAmount" : "Montant total",
+    "totalAmount" : "Prix total (taxes incluses)",
     "paymentPage" : "Paiement",
     "paymentMethod" : "Choisissez le mode de paiement",
     "payByCard": "Payer par Carte",
@@ -63,7 +64,8 @@
     "faqs" : "Foire aux questions (FAQ)",
     "ferryFull": "Le Ferry est Full ( Vous avez selectionne le nombre maximum de places)",
     "RetryPayment" : "Reessayer le paiement",
-    "unabletoprocess" : " Erreur : Impossible de traiter le paiement"
-    }
+    "unabletoprocess" : " Erreur : Impossible de traiter le paiement",
+    "ferryFullDestination" : "Tous les ferries sont complets pour la destination selectionnee"
+  }
   }
   

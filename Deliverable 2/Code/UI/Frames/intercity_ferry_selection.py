@@ -18,11 +18,15 @@ def intercity_time_selection(master, show_page):
     label.grid(row=0, column=0, columnspan=4)
 
     label = ttk.Label(page, text = getAppWord("chooseFerry") , font = LARGE_FONT)
-    label.grid(row = 2, column = 1, padx = 10, pady = 10, columnspan=2)
+    label.grid(row = 2, column = 0, padx = 10, pady = 10, columnspan=4)
 
+    full_ferry_label = ttk.Label(page, text = getAppWord("ferryFullDestination") , font = SMALL_FONT)
        
     schedule = FerrySchedule(getState("current-port"))
     city_schedule = schedule.get_next_ferry_schedules()
+    if(len(city_schedule)==0):
+        full_ferry_label.grid(row = 3, column = 0, padx = 10, pady = 10, columnspan=4)
+    
     global buttons 
     buttons = []
     for i in range(len(city_schedule)):

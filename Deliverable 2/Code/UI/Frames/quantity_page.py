@@ -94,7 +94,7 @@ def quantity_interface(master, show_page):
 
     # Create a label to display the total price
     global total_price_label
-    total_price_label = tk.Label(page, text="Total : $ "+ str(float(ticket_details["price"])), font=MEDIUM_FONT)
+    total_price_label = tk.Label(page, text=getAppWord("totalAmount") +" : $ "+ "{:.1f}".format(float(ticket_details["price"] * 1.15)), font=MEDIUM_FONT)
     total_price_label.grid(row=6, column=2)
 
     proceed_btn = tk.Button(page, text=getAppWord("proceedToPayment"), command=lambda: proceed_to_Payment(show_page), font="Raleway", bg="#20bebe", fg="white", height=2, width=30)
@@ -159,10 +159,10 @@ def update_total():
     quantity = quantity_var.get()
     unit_price = unit_price_var.get()
     # Calculate the total price by multiplying them
-    total_price = quantity * unit_price
+    total_price = quantity * unit_price * 1.15
     # Format the total price with two decimal places
     total_price = "{:.1f}".format(total_price)
-    total_price_label.config(text="Total Price: $ " + total_price)
+    total_price_label.config(text= getAppWord("totalAmount") +": $ " + total_price)
 
 def ferryFull():
     # Create an error popup
