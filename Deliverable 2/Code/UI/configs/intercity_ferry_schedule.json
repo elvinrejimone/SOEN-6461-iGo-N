@@ -29,13 +29,13 @@
         {
             "time": 1700,
             "time_text": "5:00 PM Ferry",
-            "remaining_seats": 11,
+            "remaining_seats": 10,
             "price": 30.0
         },
         {
             "time": 2100,
             "time_text": "9:00 PM Ferry",
-            "remaining_seats": 18,
+            "remaining_seats": 0,
             "price": 55.0
         }
     ],
@@ -43,13 +43,13 @@
         {
             "time": 1000,
             "time_text": "10:00 AM Ferry",
-            "remaining_seats": 50,
+            "remaining_seats": 47,
             "price": 45.0
         },
         {
             "time": 1700,
             "time_text": "5:00 PM Ferry",
-            "remaining_seats": 45,
+            "remaining_seats": 43,
             "price": 30.0
         },
         {
@@ -83,7 +83,7 @@
         {
             "time": 1100,
             "time_text": "11:00 AM Ferry",
-            "remaining_seats": 62,
+            "remaining_seats": 60,
             "price": 45.0
         },
         {

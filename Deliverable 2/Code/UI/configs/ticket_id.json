@@ -1,0 +1,165 @@
+{
+    "ticket_id": 245,
+    "tickets": [
+        {
+            "ticket_id": "IF3",
+            "ticket": "Intercity Ticket : Montreal to Toronto at 5:00 PM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 1,
+            "Total": 30.0,
+            "Purchase-Time": "April 12, 2023 | 02:04:05"
+        },
+        {
+            "ticket_id": "MF4",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 2,
+            "Total": "16.1",
+            "Purchase-Time": "April 12, 2023 | 02:04:18"
+        },
+        {
+            "ticket_id": "MF5",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 2,
+            "Total": "16.1",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 02:05:28"
+        },
+        {
+            "ticket_id": "MF231",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 1,
+            "Total": 7,
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 02:05:49"
+        },
+        {
+            "ticket_id": "MF232",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 2,
+            "Total": "16.1",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 02:09:42"
+        },
+        {
+            "ticket_id": "IF233",
+            "ticket": "Intercity Ticket : Montreal to Toronto at 5:00 PM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 1,
+            "Total": 30.0,
+            "payment-type": "payByCard",
+            "Purchase-Time": "April 12, 2023 | 03:02:10"
+        },
+        {
+            "ticket_id": "IF234",
+            "ticket": "Intercity Ticket : Montreal to Toronto at 10:00 AM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 1,
+            "Total": 45.0,
+            "payment-type": "payByCard",
+            "Purchase-Time": "April 12, 2023 | 03:02:40"
+        },
+        {
+            "ticket_id": "MF235",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 1,
+            "Total": 7,
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:03:25"
+        },
+        {
+            "ticket_id": "IF236",
+            "ticket": "Intercity Ticket : Montreal to Toronto at 10:00 AM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 1,
+            "Total": 45.0,
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:06:11"
+        },
+        {
+            "ticket_id": "MF237",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 2,
+            "Total": "16.1",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:07:37"
+        },
+        {
+            "ticket_id": "MF238",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 1,
+            "Total": 7,
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:08:17"
+        },
+        {
+            "ticket_id": "MF239",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 2,
+            "Total": "16.1",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:08:44"
+        },
+        {
+            "ticket_id": "MF240",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 1,
+            "Total": 7,
+            "payment-type": "payByCard",
+            "Purchase-Time": "April 12, 2023 | 03:11:50"
+        },
+        {
+            "ticket_id": "MF241",
+            "ticket": "Traversier de Montreal :  aller simple",
+            "details": "Valable pour un seul voyage d'un port a l'autre.",
+            "quantity": 3,
+            "Total": "19.0",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:12:41"
+        },
+        {
+            "ticket_id": "MF242",
+            "ticket": "Traversier de Montreal :  Billet de retour",
+            "details": "Permet d'effectuer deux trajets distincts entre les ports et offre un tarif reduit par rapport a l'achat de deux billets aller simple.",
+            "quantity": 5,
+            "Total": "40.2",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:13:47"
+        },
+        {
+            "ticket_id": "IF243",
+            "ticket": "Intercity Ticket : Montreal to Kingston at 5:00 PM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 1,
+            "Total": 30.0,
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:14:24"
+        },
+        {
+            "ticket_id": "IF244",
+            "ticket": "Intercity Ticket : Montreal to Toronto at 10:00 AM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 1,
+            "Total": 45.0,
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:41:26"
+        },
+        {
+            "ticket_id": "IF245",
+            "ticket": "Intercity Ticket : Ottawa to Quebec City at 11:00 AM",
+            "details": "Valid for a single journey from one port to a specific destination port selected at the time of purchase.",
+            "quantity": 2,
+            "Total": "103.5",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 03:43:29"
+        }
+    ]
+}

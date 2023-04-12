@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from utils import *
+import datetime
 from intercityFerryTicketing import FerrySchedule
 import Frames.help_popup as help_popup
 LARGE_FONT =("Verdana", 40)
@@ -33,14 +34,34 @@ def ticket_confirmation(master, show_page):
     if(getState("current-ticket-Type") == "MF"):
         ticket_details = getTicketDetails(getState("current-ticket-ID"))
         port = getAppWord("montrealFerry")+" :  "
-        ticket_text = port + ticket_details["ticket"] 
+        ticket_text = port + ticket_details["ticket"]
+        ticket_data = {
+            "ticket_id" : generate_ticket_id(),
+            "ticket" : ticket_text,
+            "details" : ticket_details["Details"],
+            "quantity" : getState("ticket-quantity"),
+            "Total" : getState("total-amount"),
+            "payment-type" : getState("payment-type"),
+            "Purchase-Time" : datetime.datetime.now().strftime("%B %d, %Y | %H:%M:%S")
+        }
+        write_ticket_to_file(ticket_data)
     else:
         schedule = FerrySchedule(getState("current-port"))
         city_schedule = schedule.get_ferry_schedule_by_time(getState("IF-ticket-time"))        
         ticket_Object = getIntercityCitiesAndTicket()
         ticket_details = ticket_Object["ticket-list"]
         
-        ticket_text =  ticket_details["ticket"] + " : " + getState("machine-city") + " to " + getState("current-port")+  " at " + city_schedule["time_text"][:-6]
+        ticket_text =  ticket_details["ticket"] + " : " + getState("machine-city") + " to " + getState("current-port")+  " at " + city_schedule["time_text"][:-6]       
+        ticket_data = {
+            "ticket_id" : generate_ticket_id() ,
+            "ticket" : ticket_text,
+            "details" : ticket_details["Details"],
+            "quantity" : getState("ticket-quantity"),
+            "Total" : getState("total-amount"),
+            "payment-type" : getState("payment-type"),
+            "Purchase-Time" : datetime.datetime.now().strftime("%B %d, %Y | %H:%M:%S")
+        }
+        write_ticket_to_file(ticket_data)
 
     ## Ticket Card 
     ticket_card = tk.Frame(page, background="white", relief="raised", borderwidth=5)

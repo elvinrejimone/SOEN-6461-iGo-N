@@ -1,8 +1,11 @@
 import json 
 import time
+from Services.print_module import *
 APP_CONFIG_FILE = "./configs/app_config.json"
 LANGUAGE_WORDS_FILE = "./configs/application_words.json"
 TICKET_FILE = "./configs/ticket_details.json"
+TICKET_ID_FILE = "./configs/ticket_id.json"
+
 
 
 ### LANGUAGE UTILS 
@@ -69,10 +72,15 @@ def getState(state):
     return config[state]
 
 def resetState():
-    newConfig = {"machine-city": "Montreal","language": "", "current-page": "LAN_SEL", "current-ticket-ID": "", "current-ticket-Type": "","current-port": "None", "payment-type": "", "ticket-quantity": 0, "total-amount": 0, "machine-city": "Montreal"}
+    newConfig = {"machine-city": getPort(),"language": "", "current-page": "LAN_SEL", "current-ticket-ID": "", "current-ticket-Type": "","current-port": "None", "payment-type": "", "ticket-quantity": 0, "total-amount": 0}
     # Save the New config file
     with open(APP_CONFIG_FILE, "w") as f:
         json.dump(newConfig, f)
+
+def getPort():
+    with open("./configs/current_port.json") as f:
+        config = json.load(f)
+    return config["port"]
 
 ### END STATE UTILS
 
@@ -115,4 +123,34 @@ def getBothLanguageTicketDetails():
         words = json.load(f)
     return words
 
+def generate_ticket_id():
+    with open(TICKET_ID_FILE, 'r+') as f:
+        ticket_data = json.load(f)
+        current_ticket_id = ticket_data['ticket_id']
+        new_ticket_id = current_ticket_id + 1
+        ticket_data['ticket_id'] = new_ticket_id
+        f.seek(0)
+        json.dump(ticket_data, f, indent=4)
+    
+    return getState("current-ticket-Type")+str(new_ticket_id)
+
+
+def write_ticket_to_file(ticket_obj):
+    with open(TICKET_ID_FILE, 'r+') as f:
+        ticket_data = json.load(f)
+        ticket_data['tickets'].append(ticket_obj)
+        f.seek(0)
+        json.dump(ticket_data, f, indent=4)
+
+    ticket_print_data = {
+            getAppWord("T1") : ticket_obj["ticket"],
+            getAppWord("T2") : ticket_obj["ticket_id"] ,
+            getAppWord("T4") : ticket_obj["quantity"],
+            getAppWord("T5") : "$ "+ str(ticket_obj["Total"]),
+            getAppWord("T6") : ticket_obj["Purchase-Time"],
+            getAppWord("T3") : ticket_obj["details"]
+        }
+    generate_ticket(ticket_print_data)
+
 ## TICKET ENDS
+
