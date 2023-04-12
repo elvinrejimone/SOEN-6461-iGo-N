@@ -1,5 +1,5 @@
 {
-    "ticket_id": 245,
+    "ticket_id": 246,
     "tickets": [
         {
             "ticket_id": "IF3",
@@ -160,6 +160,15 @@
             "Total": "103.5",
             "payment-type": "payByCash",
             "Purchase-Time": "April 12, 2023 | 03:43:29"
+        },
+        {
+            "ticket_id": "MF246",
+            "ticket": "Montreal Ferry :  Return Ticket",
+            "details": "Allows for two separate journeys between ports and provides a discounted rate compared to purchasing two one-way tickets.",
+            "quantity": 2,
+            "Total": "16.1",
+            "payment-type": "payByCash",
+            "Purchase-Time": "April 12, 2023 | 18:48:58"
         }
     ]
 }
